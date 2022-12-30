@@ -6,7 +6,7 @@ import "./Home.css"
 const Home = () => {
     return(
         <div>
-            <h1>Esto es home</h1>
+            <h1>Esto es home222222</h1>
         </div>
     )
 }
