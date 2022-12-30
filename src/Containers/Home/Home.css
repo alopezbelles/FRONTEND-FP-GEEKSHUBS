@@ -1,5 +1,49 @@
 
-.App {
-    background-color: #ffe083;
-    min-height: 100vh;
-  }
+
+
+.homeDesign{
+    /* background-color: blue; */
+    /* background-image: url("../../aessets/beach-bg-image.jpg"); */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    /* position: absolute; */
+    
+}
+
+
+
+.logoDesign{
+    position: relative;
+    margin-top: 15em;
+
+    width: 20em;
+    align-items: left;
+    justify-content: left;
+    z-index: 2;
+}
+
+.prueba{
+    background-image: url("../../aessets/beach-bg-image.jpg");
+    
+    height: 100%;
+    width: 100%;;
+
+}
+
+video {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    
+}
+
+.rowDesign{
+    width: 5%;
+}
