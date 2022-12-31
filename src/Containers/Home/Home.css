@@ -3,47 +3,74 @@
 
 .homeDesign{
     /* background-color: blue; */
-    /* background-image: url("../../aessets/beach-bg-image.jpg"); */
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-    /* position: absolute; */
+   margin: 0;
     
 }
 
 
 
-.logoDesign{
-    position: relative;
-    margin-top: 15em;
-
+.logoDesign{ 
     width: 20em;
-    align-items: left;
-    justify-content: left;
-    z-index: 2;
+   
 }
 
-.prueba{
-    background-image: url("../../aessets/beach-bg-image.jpg");
-    
-    height: 100%;
-    width: 100%;;
-
-}
 
 video {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     width: 100%;
     object-fit: cover;
     top: 0; 
     left: 0; 
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    
     
 }
 
-.rowDesign{
-    width: 5%;
+
+
+.contImage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    height: 80vh;
+}
+
+.inputsBox{
+    background-color: rgba(255,255,255,0.2);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    gap: 0.5em;
+
+    backdrop-filter: blur(20px);
+    border: solid 1px rgba(255,255,255,0.3);
+
+    box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+    
+}
+
+.inputRegDesign{
+    background-color: rgba(255,255,255,0.3);
+    border: solid 1px rgba(255,255,255,0.2);
+    box-shadow: 0 10px 20px 5px rgba(0,0,0,0.05);
+
+    border-radius: 5px;
+    padding: 0 0 0 1em;
+
+
+    height: 3em;
+    width: 70%;
+
+    font-size: 11px;
+}
+
+.inputRegDesign:focus{
+    border: none;
+    box-shadow: none;
+    background-color: rgba(255,255,255,0.3);
 }
