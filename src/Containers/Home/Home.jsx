@@ -234,7 +234,7 @@ const Home = () => {
           {/* <Col  className="divLogo">HOLA
           </Col> */}
         </Row>
-        <Row>
+        {/* <Row>
           <video
             className="backgroundVideo"
             // src={videoBg3}
@@ -248,6 +248,9 @@ const Home = () => {
 
           </video>
          
+        </Row> */}
+        <Row className="backgroundVideo" >
+          <video src={videoBg3} autoPlay loop muted></video>
         </Row>
       </Container>
     </form>
