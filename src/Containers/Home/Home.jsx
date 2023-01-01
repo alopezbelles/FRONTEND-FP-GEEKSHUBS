@@ -10,7 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
 // import videoBg from "../../aessets/beach-drone.mp4";
 import videoBg2 from "../../aessets/beach-drone-2.mp4";
-import sound from "../../aessets/waves-sound.mp3";
 import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -121,9 +120,7 @@ const Home = () => {
     <form onSubmit={submitHandler}>
       <Container className=" homeDesign">
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0">
-        <audio autoplay controls loop >
-          <source src={sound} type="audio/mpeg" autoPlay></source>
-        </audio>
+        
           <video
             className="backgroundVideo"
             src={videoBg2}
