@@ -238,12 +238,13 @@ const Home = () => {
           <video
             className="backgroundVideo"
             // src={videoBg3}
-            type="video/mp4"
+            
             autoPlay
-            loop
             muted
+            loop
+            
           >
-            <source src={videoBg3}/>
+            <source src={videoBg3} type="video/mp4" muted/>
 
           </video>
          
