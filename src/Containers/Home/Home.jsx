@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 import { useJwt } from "react-jwt";
-// import ReactPlayer from "react-player";
-import { Player } from "video-react";
+
 
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -236,14 +235,15 @@ const Home = () => {
           </Col> */}
         </Row>
         <Row>
-          {/* <video
+          <video
             className="backgroundVideo"
             src={videoBg3}
+            type="video/mp4"
             autoPlay
             loop
             muted
-          /> */}
-          <Player src={videoBg3} controls/>
+          />
+         
         </Row>
       </Container>
     </form>
