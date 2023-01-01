@@ -13,6 +13,7 @@ import Image from "react-bootstrap/Image";
 import videoBg2 from "../../aessets/beach-drone-2.mp4";
 import videoBg3 from "../../aessets/waves-bg.mp4";
 import logoWaves from "../../aessets/logo_waves.png";
+import bg from "../../aessets/beach-bg-image.jpg";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Home = () => {
@@ -124,11 +125,12 @@ const Home = () => {
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0">
           {/* <video
             className="backgroundVideo"
-            src={videoBg2}
+            src={videoBg3}
             autoPlay
             loop
             muted
           /> */}
+          <Image className="backgroundVideo" src={bg}></Image>
           {/* <ReactPlayer
           url={require("../../aessets/beach-drone-2.mp4")}
           playing>
@@ -249,9 +251,9 @@ const Home = () => {
           </video>
          
         </Row> */}
-        <Row style="position: fixed" className="backgroundVideo" >
+        {/* <Row  className="backgroundVideo" >
           <video src={videoBg3} autoPlay loop muted></video>
-        </Row>
+        </Row> */}
       </Container>
     </form>
   );
