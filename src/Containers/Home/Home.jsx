@@ -249,7 +249,7 @@ const Home = () => {
           </video>
          
         </Row> */}
-        <Row className="backgroundVideo" >
+        <Row style="position: fixed" className="backgroundVideo" >
           <video src={videoBg3} autoPlay loop muted></video>
         </Row>
       </Container>
