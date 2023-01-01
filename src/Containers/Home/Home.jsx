@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 import { useJwt } from "react-jwt";
+import ReactPlayer from "react-player";
 
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -121,14 +122,18 @@ const Home = () => {
       <Container className=" homeDesign">
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0">
         
-          <video
+          {/* <video
             className="backgroundVideo"
             src={videoBg2}
             autoPlay
             loop
             muted
-          />
+          /> */}
+          {/* <ReactPlayer
+          url={require("../../aessets/beach-drone-2.mp4")}
+          playing>
 
+          </ReactPlayer> */}
           <Col className="col-md-7  contImage container-fluid">
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
@@ -226,6 +231,15 @@ const Home = () => {
 
           {/* <Col  className="divLogo">HOLA
           </Col> */}
+        </Row>
+        <Row>
+           <video
+            className="backgroundVideo"
+            src={videoBg2}
+            autoPlay
+            loop
+            muted
+          />
         </Row>
       </Container>
     </form>
