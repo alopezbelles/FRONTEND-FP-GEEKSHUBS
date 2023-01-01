@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 import { useJwt } from "react-jwt";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
+import { Player } from "video-react";
 
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
 // import videoBg from "../../aessets/beach-drone.mp4";
 import videoBg2 from "../../aessets/beach-drone-2.mp4";
+import videoBg3 from "../../aessets/waves-bg.mp4";
 import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -121,7 +123,6 @@ const Home = () => {
     <form onSubmit={submitHandler}>
       <Container className=" homeDesign">
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0">
-        
           {/* <video
             className="backgroundVideo"
             src={videoBg2}
@@ -138,7 +139,9 @@ const Home = () => {
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
               <div className="incompleteError">{userError.incompleteerror}</div>
-              <div className="incompleteError">{userError.emailAlreadyInBBDD}</div>
+              <div className="incompleteError">
+                {userError.emailAlreadyInBBDD}
+              </div>
               <input
                 onBlur={(e) =>
                   errorHandler(e.target.name, e.target.value, "text")
@@ -233,13 +236,14 @@ const Home = () => {
           </Col> */}
         </Row>
         <Row>
-           <video
+          {/* <video
             className="backgroundVideo"
-            src={videoBg2}
+            src={videoBg3}
             autoPlay
             loop
             muted
-          />
+          /> */}
+          <Player src={videoBg3} controls/>
         </Row>
       </Container>
     </form>
