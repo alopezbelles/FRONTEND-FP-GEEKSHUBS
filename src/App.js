@@ -8,7 +8,7 @@ import Home from "./Containers/Home/Home"
 
 function App() {
   return (
-    <div className="container-fluid App ">
+    <div className="App ">
       <BrowserRouter>
         
         <Routes>

@@ -2,15 +2,22 @@
 
 
 .homeDesign{
+  
     /* background-color: blue; */
    /* margin: 0; */
    width: 100%;
    height: 100%;
-   
-    
+       
+}
+
+.bgConfig{
+    background: url(../../aessets/beach-bg-image-3.jpg) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
 }
 
 .rowDesign{
+    width: 100vw;
     height: 100vh;
 }
 
@@ -20,23 +27,25 @@
 }
 
 
-video {
+/* ESTOS ESTILOS SON PARA EL VIDEO DE BACKGROUND */
+
+/* video {
     background-color: blue;
     position: absolute;
     z-index: -1;
     width: 100%;
+    margin: 0;
     object-fit: cover;
     top: 0; 
     left: 0; 
     width: 100%;
     height: 100%;
-    object-fit: cover;
-
     
-    
-}
+} */
 
-.backgroundVideo{
+
+
+/* .backgroundVideo{
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -45,7 +54,7 @@ video {
     gap: 0;
     padding: 0;
     object-fit: cover;
-}
+} */
 
 
 .contImage{
@@ -135,9 +144,28 @@ video {
     font-size: 10px;
 }
 
-@media(max-width: 360px){
+@media(max-width: 250px){
     .inputsBox{
-        width: 100%;
+        width: 95vw;
     }
     
     }
+@media(max-width: 340px){
+    .inputsBox{
+        width: 85vw;
+    }
+    
+    }
+
+ @media(max-width: 500px){
+        .inputsBox{
+            width: 60vw;
+        }
+        
+        }
+ @media(max-width: 750px){
+        .inputsBox{
+            width: 60vw;
+        }
+        
+        }
