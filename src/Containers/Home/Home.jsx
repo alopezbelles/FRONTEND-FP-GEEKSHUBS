@@ -240,7 +240,7 @@ const Home = () => {
             // src={videoBg3}
             
             autoPlay
-            muted
+            // muted
             loop
             
           >
