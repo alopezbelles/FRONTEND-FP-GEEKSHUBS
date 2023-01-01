@@ -3,3 +3,17 @@
     background-color: #E5BFB2;
     min-height: 10vh;
 }
+
+.logoNavbar{
+    width: 10vw;
+}
+
+@media(max-width: 430px){
+    .navBarColl{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    }

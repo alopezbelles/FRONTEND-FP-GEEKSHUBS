@@ -1,0 +1,18 @@
+
+.navBar2{
+    background-color: #E5BFB2;
+    
+}
+
+.logoNavbar2{
+    margin-left: 20px;
+    width: 10vw;
+    size: auto;
+}
+
+@media(max-width:630px){
+    .logoNavbar2{
+        width: 20vh;
+    }
+    
+    }
