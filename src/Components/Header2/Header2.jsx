@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { Col, Container, Row } from "react-bootstrap";
 import "./Header2.css";
@@ -8,10 +10,9 @@ import Navbar from "react-bootstrap/Navbar";
 import logoWaves from "../../aessets/logo_waves.png";
 import Image from "react-bootstrap/Image";
 
-
-
 function Header2() {
   const [collapsed, setCollapsed] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const resizeListener = () => {
@@ -19,16 +20,16 @@ function Header2() {
         setCollapsed(true);
       }
     };
-    window.addEventListener('resize', resizeListener);
-    return () => window.removeEventListener('resize', resizeListener);
+    window.addEventListener("resize", resizeListener);
+    return () => window.removeEventListener("resize", resizeListener);
   }, []);
 
   return (
     <Nav expand="sm" className="navbar navbar-expand-lg navbar-dark  navBar2">
-        <Navbar.Brand href="#home">
+      <Navbar.Brand onClick={() => navigate("/")}>
         <Image src={logoWaves} className="logoNavbar2"></Image>
-        </Navbar.Brand>
-      
+      </Navbar.Brand>
+
       <button
         className="navbar-toggler"
         type="button"
@@ -36,16 +37,41 @@ function Header2() {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className={`navbar-collapse ${collapsed ? 'collapse' : ''}`}>
+      <div className={`navbar-collapse ${collapsed ? "collapse" : ""}`}>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">Home</a>
+            <a
+              onClick={() => navigate("/spots")}
+              className="nav-link mx-auto mt-1 mb-md-1 text-center"
+            >
+              Spots
+            </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
+          <li className="nav-item active">
+            <a
+              onClick={() => navigate("/about")}
+              className="nav-link mx-auto mt-1 mb-md-1 text-center"
+            >
+              About
+            </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Contact</a>
+        </ul>
+        <ul className="navbar-nav mr-auto  linksRight">
+          <li className="nav-item active">
+            <a
+              onClick={() => navigate("/login")}
+              className="nav-link mx-auto mt-1 mb-md-1 text-center"
+            >
+              Login
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a
+              onClick={() => navigate("/")}
+              className="nav-link mx-auto mt-1 mb-md-1 text-center"
+            >
+              Register
+            </a>
           </li>
         </ul>
       </div>
@@ -53,4 +79,4 @@ function Header2() {
   );
 }
 
-export default Header2
+export default Header2;

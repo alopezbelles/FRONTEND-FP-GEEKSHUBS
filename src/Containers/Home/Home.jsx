@@ -121,7 +121,7 @@ const Home = () => {
 
   return (
     <form className="bgConfig" onSubmit={submitHandler} >
-      <Container className=" homeDesign " >
+      <Container className=" homeDesign d-flex align-content-center justify-content-center" >
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0" style={{margin:0}}>
           
           {/* Esto es el video de bg de home, pero el navegador no lo reproduce */}
@@ -227,30 +227,15 @@ const Home = () => {
               <div className="col d-flex text-center align-items-center buttonDivReg">
                 <button className="buttonDesignRegister">REGISTER</button>
               </div>
+              <div onClick={() => navigate("/login")} className="alredyRegister">Already registered? Log in.</div>
             </div>
           </Col>
 
-          {/* <Col  className="divLogo">HOLA
-          </Col> */}
+          
         </Row>
-        {/* <Row>
-          <video
-            className="backgroundVideo"
-            // src={videoBg3}
-            
-            autoPlay
-            muted
-            loop
-            
-          >
-            <source src={videoBg3} type="video/mp4" muted/>
-
-          </video>
+        
          
-        </Row> */}
-        {/* <Row  className="backgroundVideo" >
-          <video src={videoBg3} autoPlay loop muted></video>
-        </Row> */}
+       
       </Container>
     </form>
   );
