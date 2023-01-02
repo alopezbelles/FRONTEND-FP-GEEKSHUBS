@@ -151,7 +151,7 @@ const Login = () => {
               <div className="col d-flex text-center align-items-center buttonDivReg">
                 <button className="buttonDesignRegister">LOGIN</button>
               </div>
-              <div onClick={() => navigate("/login")} className="alredyRegister">Not registered yet? Register.</div>
+              <div onClick={() => navigate("/")} className="alredyRegister">Not registered yet? Register.</div>
             </div>
           </Col>
 

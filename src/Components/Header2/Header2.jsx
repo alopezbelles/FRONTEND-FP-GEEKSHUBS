@@ -38,7 +38,7 @@ function Header2() {
         <span className="navbar-toggler-icon" />
       </button>
       <div className={`navbar-collapse ${collapsed ? "collapse" : ""}`}>
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto hover">
           <li className="nav-item active">
             <a
               onClick={() => navigate("/spots")}
@@ -56,7 +56,7 @@ function Header2() {
             </a>
           </li>
         </ul>
-        <ul className="navbar-nav mr-auto  linksRight">
+        <ul className="navbar-nav mr-auto  linksRight hover">
           <li className="nav-item active">
             <a
               onClick={() => navigate("/login")}
