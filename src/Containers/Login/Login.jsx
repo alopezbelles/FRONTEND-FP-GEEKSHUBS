@@ -2,6 +2,8 @@ import "./Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 
@@ -12,34 +14,66 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const Login = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("jwt");
-
-  if (token) {
-    navigate("/");
-  }
+  
 
   const [user, setUser] = useState({
     
     email: "",
     password: "",
-    
   });
 
   const [userError, setUserError] = useState({
     
     emailerror: "",
     passworderror: "",
-    incompleteerror: "",
+    empty: "",
+    wrongCredentials: ""
     
   });
+
+  let body = {
+    email: user.email,
+    password: user.password
+  }
 
   const loginUser = async (body) => {
     let res = await axios.post(
       "https://backend-fp-geekshubs-production.up.railway.app/auth/login",
       body
     );
+
+    let jwt = res.data.jwt;
+    let credentials = {
+      token: jwt,
+    };
+
+    localStorage.setItem("jwt", credentials.token);
     navigate("/");
   };
+
+  const validateBody = (body) => {
+    if (body.email !== "" && body.password !== "") { return true }
+  }
+
+
+  const submitLogin = (e) => {
+    e.preventDefault();
+    if (validateBody(body)) {
+        loginUser(body)
+        .then((created) => console.log(created))
+        .catch((error) => {
+          setUserError((prevState) => ({
+            ...prevState,
+            wrongCredentials: error.response.data.message,
+          }));
+        });
+    } else {
+      setUserError((prevState) => ({
+        ...prevState,
+        empty: "Check all fields are filled"
+      }))
+    }
+  }
 
   //Handlers//
 
@@ -50,75 +84,33 @@ const Login = () => {
     }));
   };
 
-  const errorHandler = (field, value, type, password1) => {
+  const errorHandler = (field, value, type, password) => {
     let error = "";
-    error = errorCheck(value, type, password1);
+    error = errorCheck(value, type, password);
     setUserError((prevState) => ({
       ...prevState,
       [field + "error"]: error,
     }));
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if (validateBody(body)) {
-      setUserError((prevState) => ({
-        ...prevState,
-        incompleteerror: "",
-      }));
-      loginUser(body)
-        .then((created) => console.log(created))
-        .catch((error) => {
-          setUserError((prevState) => ({
-            ...prevState,
-            emailAlreadyInBBDD: error.response.data,
-          }));
-        });
-    } else {
-      setUserError((prevState) => ({
-        ...prevState,
-        incompleteerror: "Please enter your details to register.",
-      }));
-    }
-  };
+  
 
-  const body = {
-    
-    email: user.email,
-    password: user.password,
-    
-  };
 
-  const validateBody = (body) => {
-    if (
-      
-      body.email !== "" &&
-      body.password !== "" 
-    ) {
-      return true;
-    }
-  };
+
+
 
   return (
-    <form className="bgConfig" onSubmit={submitHandler} >
+    <form className="bgConfig" onSubmit={submitLogin} >
       <Container className=" homeDesign d-flex align-content-center justify-content-center" >
         <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0" style={{margin:0}}>
           
-          {/* Esto es el video de bg de home, pero el navegador no lo reproduce */}
-          {/* <video
-            className="backgroundVideo"
-            src={videoBg3}
-            autoPlay
-            loop
-            muted
-          /> */}
          
           <Col className="col col-xl-7  contImage container-fluid">
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
-              <div className="incompleteError">{userError.incompleteerror}</div>
+              <div className="incompleteError">{userError.empty}</div>
               <div className="incompleteError">
-                {userError.emailAlreadyInBBDD}
+                {userError.wrongCredentials}
               </div>
               
              

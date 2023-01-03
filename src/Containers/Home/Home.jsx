@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 import { useJwt } from "react-jwt";
-
-
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -19,6 +17,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const Home = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
+  let { decodedToken } = useJwt("jwt");
 
   if (token) {
     navigate("/");
@@ -61,6 +60,7 @@ const Home = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    // console.log(inputHandler)
   };
 
   const errorHandler = (field, value, type, password1) => {
@@ -120,10 +120,12 @@ const Home = () => {
   };
 
   return (
-    <form className="bgConfig" onSubmit={submitHandler} >
-      <Container className=" homeDesign d-flex align-content-center justify-content-center" >
-        <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0" style={{margin:0}}>
-          
+    <form onSubmit={submitHandler} className="bgConfig" >
+      <Container className=" homeDesign d-flex align-content-center justify-content-center">
+        <Row
+          className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0"
+          style={{ margin: 0 }}
+        >
           {/* Esto es el video de bg de home, pero el navegador no lo reproduce */}
           {/* <video
             className="backgroundVideo"
@@ -132,10 +134,11 @@ const Home = () => {
             loop
             muted
           /> */}
-         
+
           <Col className="col col-xl-7  contImage container-fluid">
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
+              console.log(submitHandler);
               <div className="incompleteError">{userError.incompleteerror}</div>
               <div className="incompleteError">
                 {userError.emailAlreadyInBBDD}
@@ -195,7 +198,6 @@ const Home = () => {
                 name="email"
               />
               <div className="errorInput">{userError.emailerror}</div>
-
               <input
                 onBlur={(e) =>
                   errorHandler(e.target.name, e.target.value, "password")
@@ -207,7 +209,6 @@ const Home = () => {
                 name="password"
               />
               <div className="errorInput">{userError.passworderror}</div>
-
               <input
                 onBlur={(e) =>
                   errorHandler(
@@ -227,15 +228,15 @@ const Home = () => {
               <div className="col d-flex text-center align-items-center buttonDivReg">
                 <button className="buttonDesignRegister">REGISTER</button>
               </div>
-              <div onClick={() => navigate("/login")} className="alredyRegister">Already registered? Log in.</div>
+              <div
+                onClick={() => navigate("/login")}
+                className="alredyRegister"
+              >
+                Already registered? Log in.
+              </div>
             </div>
           </Col>
-
-          
         </Row>
-        
-         
-       
       </Container>
     </form>
   );
