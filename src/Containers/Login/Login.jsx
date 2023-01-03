@@ -48,7 +48,7 @@ const Login = () => {
     };
 
     localStorage.setItem("jwt", credentials.token);
-    navigate("/");
+    navigate("/spots");
   };
 
   const validateBody = (body) => {
