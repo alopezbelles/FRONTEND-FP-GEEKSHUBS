@@ -41,14 +41,14 @@ const Login = () => {
       "https://backend-fp-geekshubs-production.up.railway.app/auth/login",
       body
     );
-
+    console.log(res.data)  
     let jwt = res.data.jwt;
     let credentials = {
       token: jwt,
     };
 
     localStorage.setItem("jwt", credentials.token);
-    navigate("/spots");
+    navigate("/");
   };
 
   const validateBody = (body) => {
@@ -67,6 +67,7 @@ const Login = () => {
             wrongCredentials: error.response.data.message,
           }));
         });
+        
     } else {
       setUserError((prevState) => ({
         ...prevState,
@@ -92,10 +93,6 @@ const Login = () => {
       [field + "error"]: error,
     }));
   };
-
-  
-
-
 
 
 
