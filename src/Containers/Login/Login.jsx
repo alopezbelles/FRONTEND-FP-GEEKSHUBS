@@ -41,7 +41,9 @@ const Login = () => {
       "https://backend-fp-geekshubs-production.up.railway.app/auth/login",
       body
     );
-    console.log(res.data)  
+    console.log(body)  
+    console.log(jwt)
+    console.log(credentials)
     let jwt = res.data.jwt;
     let credentials = {
       token: jwt,

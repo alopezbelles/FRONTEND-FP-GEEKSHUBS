@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Header2 from "./Components/Header2/Header2";
 import Login from "./Containers/Login/Login";
+import Spots from "./Containers/Spots/Spots";
+import About from "./Containers/About/About";
+
 
 
 function App() {
@@ -18,6 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/spots" element={<Spots />} />
+          <Route path="/about" element={<About />} />
           
         </Routes>
       </BrowserRouter>
