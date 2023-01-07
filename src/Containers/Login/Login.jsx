@@ -50,7 +50,7 @@ const Login = () => {
     };
 
     localStorage.setItem("jwt", credentials.token);
-    navigate("/");
+    navigate("/about");
   };
 
   const validateBody = (body) => {

@@ -20,7 +20,7 @@ const Home = () => {
   let { decodedToken } = useJwt("jwt");
 
   if (token) {
-    navigate("/");
+    navigate("/about");
   }
 
   const [user, setUser] = useState({
@@ -50,7 +50,7 @@ const Home = () => {
       "https://backend-fp-geekshubs-production.up.railway.app/auth/register",
       body
     );
-    navigate("/");
+    navigate("/about");
   };
 
   //Handlers//
