@@ -1,5 +1,5 @@
 .aboutDesign {
-  height: 230vh;
+  height: auto;
   width: 100vw;
   display: flex;
   margin: 0;
@@ -8,7 +8,7 @@
 .row1Design {
   background: url(../../aessets/bg.3.jpg) no-repeat center fixed;
   background-size: cover;
-  height: 70%;
+  height: 70vh;
   width: 100vw;
 
   /* display: flex; */
@@ -20,6 +20,10 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 90px;
+
+  backdrop-filter: blur(13px);
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
 }
 
 .row2Design {
@@ -63,8 +67,18 @@
 .row3Design {
   background: url(../../aessets/bg.3.jpg) no-repeat center fixed;
   background-size: cover;
-  height: 70%;
+  height: 50vh;
   width: 100vw;
+}
+
+.row4Design{
+    /* height: 15%; */
+    width: 100vw;
+
+    background-color: #c8d2d2;
+}
+.logoMedia{
+    width: 5em;
 }
 
 @media (max-width: 500px) {
@@ -76,7 +90,7 @@
   .infoBox {
     margin-bottom: -3em;
   }
-
+  
   .row2Design {
     height: 140%;
   }
@@ -84,11 +98,15 @@
     font-size: 50px;
   }
   .row3Design{
-    height: 220%;
+    height: 70vh;
   }
   .row1Design{
-    height: 140%;
+    height: 40vh;
   }
+  /* .descriptionBox {
+    height: 100vh;
+    font-size: 12px;
+  } */
 }
 
 .descriptionBox {
@@ -98,12 +116,13 @@
   border-radius: 5px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
   width: 80vw;
-  height: 40vh;
+  height: auto;
 
   color: white;
   font-size: 18px;
