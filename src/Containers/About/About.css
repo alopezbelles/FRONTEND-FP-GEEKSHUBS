@@ -1,58 +1,110 @@
-
-
-.aboutDesign{
-    height: 160vh;
-    width: 100vw;
-    display: flex;
-    margin: 0;
+.aboutDesign {
+  height: 230vh;
+  width: 100vw;
+  display: flex;
+  margin: 0;
 }
 
+.row1Design {
+  background: url(../../aessets/bg.3.jpg) no-repeat center fixed;
+  background-size: cover;
+  height: 70%;
+  width: 100vw;
 
-
-.row1Design{
-    background: url(../../aessets/bg.3.jpg) no-repeat center fixed;
-    background-size: cover;
-    height: 100%;
-    width: 100vw;
-
-    /* display: flex; */
-
-
+  /* display: flex; */
 }
 
-.col1Design{
-    width: 100vw;
-    color: white; 
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 90px;
+.col1Design {
+  width: 100vw;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 90px;
 }
 
-.row2Design{
-    background-color: #E5BFB2;
-    width: 100vw;
-    height: 100%;
-    /* padding: 2em; */
-    /* margin-top: 2em; */
-
+.row2Design {
+  background-color: #c8d2d2;
+  width: 100vw;
+  height: auto;
+  /* padding: 2em; */
+  /* margin-top: 2em; */
 }
 
+.infoBox {
+  /* background-color: rgba(255,255,255,0.4); */
+  width: 15em;
+  height: 15em;
+  /* flex-direction: column; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.infoBox{
-    /* background-color: rgba(255,255,255,0.4); */
-    width: 15em;
-    height: 15em;
+  /* border-radius: 5px; */
 
-    /* border-radius: 5px; */
-
-    
-    margin-top: 2em;
-    margin-bottom: 2em; 
-    /* backdrop-filter: blur(13px); */
-    /* border: solid 1px rgba(255,255,255,0.3); */
+  margin-top: 2em;
+  margin-bottom: 2em;
+  /* backdrop-filter: blur(13px); */
+  /* border: solid 1px rgba(255,255,255,0.3); */
 }
 
-.iconDesign{
-    height: 200px;
-    align-items: center;
-    justify-content: center;
+.iconDesign {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  height: 30vh;
+}
+
+.iconDesign:hover {
+  scale: 1.2;
+  transition: 0.2s;
+}
+
+.row3Design {
+  background: url(../../aessets/bg.3.jpg) no-repeat center fixed;
+  background-size: cover;
+  height: 70%;
+  width: 100vw;
+}
+
+@media (max-width: 500px) {
+  .iconDesign {
+    /* margin-top: 20em; */
+    height: 10em;
+  }
+
+  .infoBox {
+    margin-bottom: -3em;
+  }
+
+  .row2Design {
+    height: 140%;
+  }
+  .col1Design {
+    font-size: 50px;
+  }
+  .row3Design{
+    height: 220%;
+  }
+  .row1Design{
+    height: 140%;
+  }
+}
+
+.descriptionBox {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(13px);
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+  width: 80vw;
+  height: 40vh;
+
+  color: white;
+  font-size: 18px;
 }
