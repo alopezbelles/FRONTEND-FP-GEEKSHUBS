@@ -14,12 +14,12 @@ import icon7 from "../../aessets/twitter.png";
 
 const About = () => {
   return (
-    <Container className="aboutDesign d-flex flex-column align-content-center justify-content-center">
-      <Row className="row1Design d-flex align-content-center justify-content-center">
-        <Col className="col1Design">About Waves.</Col>
+    <Container fluid className="aboutDesign d-flex flex-column align-content-center justify-content-center">
+      <Row  className="row1Design d-flex align-content-center justify-content-center">
+        <Col  className="col1Design">About Waves.</Col>
       </Row>
 
-      <Row className="container-fluid row2Design justify-content-evenly">
+      <Row className="row2Design justify-content-evenly">
         {/* <Col className="infoBox">Col
             </Col> */}
         <div className="infoBox">

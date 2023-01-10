@@ -1,0 +1,23 @@
+
+.spotsDesign{
+    background-color: #c8d2d2;
+
+    height: auto;
+    width: 100vw;
+    
+
+}
+
+.titleSpots{
+    height: 10em;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    font-size: 60px;
+    color: #004150
+
+}
+
+.descriptionTitle{
+    width: 70%;
+    margin-bottom: 2em;
+}
