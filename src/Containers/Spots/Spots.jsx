@@ -18,9 +18,13 @@ const Spots = () => {
         <Container fluid className=" spotsDesign">
             <Row className="row1Spots d-flex flex-column align-items-center justify-content-center">
                 <Col className="titleSpots">SPOTS</Col>
-                <Col className="descriptionTitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Col>
+                <Col className="descriptionTitle">Access the following spots to discover the best places to surf safely. Know the conditions of each beach as well as its safety level and which are the best seasons for surfing. Take advantage of the experiences of other users and discover which are the best beaches around you to practice sport in an environment tested for it.  </Col>
             </Row>
+            <Row className="row2Spots"> Hola soy row2
+                <div className=""></div>
 
+
+            </Row>
 
 
         </Container>

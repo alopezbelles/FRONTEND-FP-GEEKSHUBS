@@ -39,16 +39,16 @@ const Login = () => {
   const loginUser = async (body) => {
     let res = await axios.post(
       "https://backend-fp-geekshubs-production.up.railway.app/auth/login",
+      // "http://localhost:3656/auth/login"
       body
     );
-    // console.log(body)  
-    // console.log(jwt)
-    // console.log(credentials)
+    
     let jwt = res.data.jwt;
+    
     let credentials = {
       token: jwt,
     };
-
+    
     localStorage.setItem("jwt", credentials.token);
     navigate("/about");
   };
