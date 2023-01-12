@@ -45,18 +45,34 @@ export const allSpots = async () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     const bodyParameters = {
-        spotname: spot.spotname,
-        city: spot.city,
-        adress: spot.adress,
-        type: spot.type,
-        conditions: spot.conditions,
-        lifeguard: spot.lifeguard,
-        length: spot.length,
-        rating: spot.rating,
-        imagepath: spot.imagepath,
+        spotname: body.spotname,
+        city: body.city,
+        adress: body.adress,
+        type: body.type,
+        conditions: body.conditions,
+        lifeguard: body.lifeguard,
+        length: body.length,
+        rating: body.rating,
+        imagepath: body.imagepath,
     };
     try {
       let res = await axios.patch(`${URL}/spots/newspots`, bodyParameters, config);
+      return res.data.resp;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  export const editUser = async (body, token) => {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const bodyParameters = {
+      username: body.username,
+      password: body.password,
+    };
+    try {
+      let res = await axios.patch(`${URL}/users/edit`, bodyParameters, config);
       return res.data.resp;
     } catch (error) {
       console.error(error);

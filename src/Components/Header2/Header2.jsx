@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useJwt } from "react-jwt";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { Col, Container, Row } from "react-bootstrap";
@@ -14,6 +15,10 @@ function Header2() {
   const [collapsed, setCollapsed] = useState(true);
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
+  let {decodedToken} = useJwt(token);
+  if (decodedToken === null) {
+    decodedToken = { name: "" };
+  }
 
   const logout = () => {
     localStorage.removeItem("jwt");
@@ -63,6 +68,14 @@ function Header2() {
             </li>
           </ul>
           <ul className="navbar-nav mr-auto  linksRight hover">
+            <li className="nav-item active">
+              <a
+                onClick={() => navigate("/profile")}
+                className="nav-link mx-auto mt-1 mb-md-1 text-center"
+              >
+                Welcome, {decodedToken.name}!
+              </a>
+            </li>
             <li className="nav-item active">
               <a
                 onClick={() => logout()}
