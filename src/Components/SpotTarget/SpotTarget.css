@@ -1,0 +1,34 @@
+
+.targetDesign{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 1em;
+
+  max-width: 20rem;
+  max-height: 400rem;
+
+  background-color: beige;
+  border-radius: 15px;
+}
+
+
+
+.imageSpot{
+    scale: 90%;
+    border-radius: 15px
+    /* content: cover; */
+
+}
+
+
+
+.targetDesign:hover {
+    
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+    
+  
+  }

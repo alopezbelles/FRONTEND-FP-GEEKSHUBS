@@ -8,6 +8,12 @@
 
 }
 
+
+.row2Spots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .titleSpots{
     height: 10em;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
