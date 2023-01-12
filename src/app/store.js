@@ -1,9 +1,9 @@
 
 import { configureStore } from "@reduxjs/toolkit";
-import spotSlice from "../containers/Spots/spotsSlice";
+import spotsSlice from "../Containers/Spots/spotsSlice";
 
 export default configureStore({
   reducer: {
-    spot: spotSlice
+    spot: spotsSlice
   },
 });
