@@ -14,7 +14,9 @@
   /* background-color: beige; */
   border-radius: 15px;
 
-  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+
+  filter: grayscale(70%)
   
 }
 
@@ -28,6 +30,9 @@
     cursor: pointer;
     transform: scale(1.05);
     transition: 0.5s;
+    filter: none;
+    border-radius: 0px; 
+    box-shadow: none;
     
   
   }
@@ -38,6 +43,8 @@
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   }
+
+  
 
   .citySpot{
     color: white;
