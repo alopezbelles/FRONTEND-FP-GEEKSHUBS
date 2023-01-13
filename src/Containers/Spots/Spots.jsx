@@ -3,15 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Spots.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { allSpots } from "../../services/ApiCalls";//esto es all spots
 import { addPlace, placeData  } from "../../Containers/Spots/spotsSlice";
 
-
-// import { errorCheck } from "../../services/usefull";
-// import axios from "axios";
-// import { useJwt } from "react-jwt";
-import { Col, Container, Row } from "react-bootstrap";
 import SpotTarget from "../../Components/SpotTarget/SpotTarget";
 
 const Spots = () => {

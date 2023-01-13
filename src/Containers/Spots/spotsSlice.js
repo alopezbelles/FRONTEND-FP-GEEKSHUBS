@@ -7,8 +7,7 @@ export const spotsSlice = createSlice({
       details: {},
       query: "",
       search: [],
-      loans: [],
-      byDirector: [],
+      
     },
     reducers: {
       addPlace: (state, action) => {
@@ -17,12 +16,7 @@ export const spotsSlice = createSlice({
           ...action.payload,
         };
       },
-      // addSearch: (state, action) => {
-      //   return {
-      //     ...state,
-      //     search: action.payload,
-      //   };
-      // },
+      
       addCriteria: (state, action) => {
         return {
           ...state,
@@ -35,4 +29,4 @@ export const spotsSlice = createSlice({
 
   export const placeData = (state) => state.spot;
   export default spotsSlice.reducer;
-  export const { addPlace, addSearch, addCriteria } = spotsSlice.actions;
+  export const { addPlace, addCriteria } = spotsSlice.actions;

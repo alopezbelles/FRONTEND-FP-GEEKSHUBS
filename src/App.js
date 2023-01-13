@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import Header2 from "./Components/Header2/Header2";
 import Login from "./Containers/Login/Login";
 import Spots from "./Containers/Spots/Spots";
 import About from "./Containers/About/About";
+import SpotInfo from "./Containers/SpotInfo/SpotInfo";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/spots" element={<Spots />} />
           <Route path="/about" element={<About />} />
+          <Route path="/spotinfo" element={<SpotInfo />} />
           
         </Routes>
       </BrowserRouter>

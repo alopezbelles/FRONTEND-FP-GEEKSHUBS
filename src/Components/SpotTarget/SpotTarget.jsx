@@ -1,5 +1,9 @@
 import React from "react";
 import "./SpotTarget.css";
+import { useSelector } from "react-redux";
+
+
+
 
 const SpotTarget = ({ spot, selectionSpot }) => {
 //   const cardBackground = {
@@ -7,9 +11,10 @@ const SpotTarget = ({ spot, selectionSpot }) => {
 //       "url(https://xsurf.es/wp-content/uploads/2021/01/Surf-en-Espana.jpg)",
 //     backgroundSize: "cover",
 //   };
+
+
   const cardBackground = {
-    background:
-      "url(https://turismolanzarote.com/wp-content/uploads/2017/03/Famara_Jeziel_12.jpg)",
+    backgroundImage: `url(${spot.imagepath})`,
     backgroundSize: "cover",
   };
   return (

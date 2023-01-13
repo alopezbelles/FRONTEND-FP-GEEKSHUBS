@@ -1,0 +1,38 @@
+
+.spotInfoDesign{
+    background-color: #c8d2d2;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.row1SpotinfoDesign{
+    height: 100%;
+    width: 100%;
+}
+
+.col1SpotinfoDesign{
+    height: 100%;
+    width: 50vw;
+
+}
+
+.col2SpotinfoDesign{
+    height: 100%;
+    width: 50vw;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imageSpotinfo{
+    height: 90vh;
+}
+
