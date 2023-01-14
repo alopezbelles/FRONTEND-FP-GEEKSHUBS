@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# FRONTEND-FP-GEEKSHUBS
+Frontend Repository final project Bootcamp Full Stack Developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/113507322/205169800-ae8aeff3-2afc-467c-8c53-6c1637671770.png)
 
-## Available Scripts
+### Datos generales
 
-In the project directory, you can run:
+**- Autor del proyecto:** Alejandro López Bellés
 
-### `npm start`
+**- Título del proyecto:** Proyecto Final GEEKSHUBS ACADEMY - WAVES APP
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**- Fecha:** 15/01/2023
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Tecnologías y dependencias: 
 
-### `npm test`
+![tecnologias frontend](https://user-images.githubusercontent.com/113507322/212434438-c2da5f9a-07d0-4e16-b6eb-60bae0525eb0.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+ ### Acceso a la aplicación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> [https://main.d2zdcocbf8dhlm.amplifyapp.com/](https://main.d2w3o8j2ftrauk.amplifyapp.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Datos de acceso como administrador: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Mail: admin@admin.com // Password: Admin1234
 
-### `npm run eject`
+ ### Descripción general del proyecto 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+El siguiente ejercicio consiste en el diseño y desarrollo de un FRONTEND para la APP WAVES, que ofrece una selección de ubicaciones para surfistas. Este FRONTEND conecta con una API envía peticiones una BASE DE DATOS SQL almacenada en RAILWAY, donde se encuentra toda la información necesaria para el correcto funcionamiento de la aplicación.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ ###  WAVES APP
+ ![waves-band](https://user-images.githubusercontent.com/113507322/212435385-f1d34478-5473-4f50-8172-2cc849e3b65e.png)
+ 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+La aplicación permite la navegación entre las distintas pantallas que la componen y su diseño está adaptado a la resolución a distintos dispositivos. Está estructurada de la siguiente manera:
+ 
+ 
+**-->HOME / REGISTER** 
 
-## Learn More
+La primera vista de la aplicación conforme accedemos a ella es la vista de REGISTER. Aquí encontramos el formulario para dar de alta un nuevo usuario en la base de datos. Los campos para crear el usuario son obligatorios ('user name', 'name', 'adress', 'city', 'email', 'password', 'password2'. Cada input nos indicará en caso de error si los campos introducidos son válidos o no lo son. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Desde el 'header' tenemos acceso a las páginas 'Spots', 'About', y 'Login'  para dar acceso a los usuarios ya registrados. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![home-register](https://user-images.githubusercontent.com/113507322/212437266-e13e9834-0d77-45b6-bd1c-0c2e0e5e68c2.png)
 
-### Code Splitting
+**-->LOGIN**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+El login nos da acceso a la página como usuarios ya registrados. Para logearnos necesitamos introducir el 'email' y 'password'.
 
-### Analyzing the Bundle Size
+![login](https://user-images.githubusercontent.com/113507322/212439311-8009d9db-7cc9-4df1-9c84-d7636349f63f.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**-->SPOTS**
+En la vista Spots tenemos acceso a todas las playas. Desde aquí podemos acceder a la información de cada una. 
+La vista está compuesta por una serie de tarjetas con la foto de la playa, el nombre y la ubicación. Al darle click, accedemos a la información de cada una. 
 
-### Making a Progressive Web App
+![spots](https://user-images.githubusercontent.com/113507322/212439530-c2f7a6f2-91d3-4981-84f6-40cdbc6611cb.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+**-->ABOUT**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+La ultima sección de la aplicación es 'About'. Aquí encontramos una descripción tanto de WAVES APP como del contenido que ofrece. 
 
-### Deployment
+![about-1](https://user-images.githubusercontent.com/113507322/212439722-7fdb2da0-7b08-4da4-af98-af9c4f1b9ccb.png)
+![about-2](https://user-images.githubusercontent.com/113507322/212439727-0c868d11-aa23-4372-8d01-30cb5d2ae469.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**-->ADAPTACIÓN A DISPOSITIVOS**
+
+**RECURSOS ALTERNATIVOS**
+
+Diseño y edición de imágenes y vectores:
+  - ADOBE PHOTOSHOP.
+  - ADOBE ILLUSTRATOR. 
+
+**FUENTES**
+
+- Vectores, imágenes y autores: www.freepik.es / www.pixabay.com / www.pexels.com
+
+
+ 
+
+ 
