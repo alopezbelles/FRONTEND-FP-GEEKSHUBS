@@ -10,6 +10,7 @@ import Login from "./Containers/Login/Login";
 import Spots from "./Containers/Spots/Spots";
 import About from "./Containers/About/About";
 import SpotInfo from "./Containers/SpotInfo/SpotInfo";
+import Profile from "./Containers/Profile/Profile";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/spots" element={<Spots />} />
           <Route path="/about" element={<About />} />
           <Route path="/spotinfo" element={<SpotInfo />} />
+          <Route path="/profile" element={<Profile />} />
           
         </Routes>
       </BrowserRouter>
