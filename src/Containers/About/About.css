@@ -17,8 +17,7 @@
 .col1Design {
   width: 100vw;
   color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Sedgwick Ave Display', cursive;
   font-size: 90px;
 
   backdrop-filter: blur(13px);

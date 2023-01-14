@@ -35,7 +35,7 @@ const Spots = () => {
   return (
     <Container fluid className=" spotsDesign">
       <Row className="row1Spots d-flex flex-column align-items-center justify-content-center">
-        <Col className="titleSpots">DISCOVER THE BEST SPOTS.</Col>
+        <Col className="titleSpots">Discover the best spots.</Col>
         <Col className="descriptionTitle">
           Access the following spots to discover the best places to surf safely.
           Know the conditions of each beach as well as its safety level and
@@ -64,7 +64,7 @@ const Spots = () => {
     return (
       <Container fluid className=" spotsDesign">
         <Row className="row1Spots d-flex flex-column align-items-center justify-content-center">
-          <Col className="titleSpots">DISCOVER THE BEST SPOTS.</Col>
+          <Col className="titleSpots">Discover the best spots</Col>
           <Col className="descriptionTitle">
             Access the following spots to discover the best places to surf safely.
             Know the conditions of each beach as well as its safety level and
