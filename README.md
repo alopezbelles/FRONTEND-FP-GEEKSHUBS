@@ -54,14 +54,22 @@ El login nos da acceso a la página como usuarios ya registrados. Para logearnos
 En la vista Spots tenemos acceso a todas las playas. Desde aquí podemos acceder a la información de cada una. 
 La vista está compuesta por una serie de tarjetas con la foto de la playa, el nombre y la ubicación. Al darle click, accedemos a la información de cada una. 
 
-![spots](https://user-images.githubusercontent.com/113507322/212439530-c2f7a6f2-91d3-4981-84f6-40cdbc6611cb.png)
+![spots](https://user-images.githubusercontent.com/113507322/212490938-6e88097e-0ff9-4373-ac85-84365e02590e.png)
+
+**-->SPOTS INFO**
+
+Dentro de cada Spot tendremos la información específica de cada una de las localizaciones. En ella encontramos El título del spot/playa. Luego la posición 'top rated', evaluada de 1 a 5 estrellas. Por último, la presencia de socorristas, el tipo de playa y sus dimensiones en km. 
+
+![spots-info](https://user-images.githubusercontent.com/113507322/212490974-9e2fe0b4-72ec-4647-9aa2-d83bf81cff91.png)
+
 
 
 **-->ABOUT**
 
 La ultima sección de la aplicación es 'About'. Aquí encontramos una descripción tanto de WAVES APP como del contenido que ofrece. 
 
-![about-1](https://user-images.githubusercontent.com/113507322/212439722-7fdb2da0-7b08-4da4-af98-af9c4f1b9ccb.png)
+![about-1](https://user-images.githubusercontent.com/113507322/212490863-997c51d1-efdb-470d-b102-5d3cc2449c29.png)
+
 ![about-2](https://user-images.githubusercontent.com/113507322/212439727-0c868d11-aa23-4372-8d01-30cb5d2ae469.png)
 
 
@@ -77,6 +85,7 @@ Diseño y edición de imágenes y vectores:
 **FUENTES**
 
 - Vectores, imágenes y autores: www.freepik.es / www.pixabay.com / www.pexels.com
+- Fuentes: google Fonts. 
 
 
  
