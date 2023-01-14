@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
-import { useJwt } from "react-jwt";
+// import { useJwt } from "react-jwt";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -17,10 +17,10 @@ import { Col, Container, Row } from "react-bootstrap";
 const Home = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
-  let { decodedToken } = useJwt("jwt");
+  // let { decodedToken } = useJwt("jwt");
 
   if (token) {
-    navigate("/about");
+    navigate("/spots");
   }
 
   const [user, setUser] = useState({
@@ -50,7 +50,8 @@ const Home = () => {
       "https://backend-fp-geekshubs-production.up.railway.app/auth/register",
       body
     );
-    navigate("/about");
+  
+    navigate("/spots");
   };
 
   //Handlers//

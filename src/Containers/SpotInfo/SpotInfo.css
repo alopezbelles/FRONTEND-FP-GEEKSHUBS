@@ -31,7 +31,7 @@
     height: auto;
 
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
 
@@ -47,13 +47,13 @@
 
 .col1SpotinfoDesign{
     height: 100%;
-    width: 50vw;
+    width: 50%;
 
 }
 
 .col2SpotinfoDesign{
     height: 100%;
-    width: 50vw;
+    width: 50%;
     padding: 5em;
     display: flex;
     flex-direction: column;
@@ -69,4 +69,18 @@
 
 .starRating{
     font-size: 40px;
+}
+
+@media(max-width: 700px){
+    .row1SpotinfoDesign{
+        display:flex;
+        flex-direction: column;
+    }
+    .col1SpotinfoDesign{
+        width: 100%;
+    }
+    .col2SpotinfoDesign{
+        width: 100%;
+        padding: 1em;
+    }
 }

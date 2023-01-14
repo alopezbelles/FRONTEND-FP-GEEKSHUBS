@@ -32,7 +32,7 @@ const SpotInfo = () => {
 
     <Container fluid className="spotInfoDesign">
       <Row  className="row1SpotinfoDesign">
-        <Col className=" col1SpotinfoDesign">
+        <Col className="col-8 col-md-6 col1SpotinfoDesign">
           <div style={{backgroundImage: `url(${image})`, backgroundSize: "cover"}} className="imageSpotinfo">
             {/* <img 
             className="" 
@@ -42,7 +42,7 @@ const SpotInfo = () => {
           </div>
           
         </Col>
-        <Col className="col2SpotinfoDesign">
+        <Col className="   col2SpotinfoDesign">
             
           <h1 className="tittleSpot">{selectedSpot.spotname}</h1>
           <h4 className="starRating">{topRated(selectedSpot.rating)}</h4>

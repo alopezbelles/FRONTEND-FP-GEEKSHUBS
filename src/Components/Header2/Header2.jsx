@@ -105,14 +105,8 @@ function Header2() {
       </button>
       <div className={`navbar-collapse ${collapsed ? "collapse" : ""}`}>
         <ul className="navbar-nav mr-auto hover">
-          <li className="nav-item active">
-            <a
-              onClick={() => navigate("/spots")}
-              className="nav-link mx-auto mt-1 mb-md-1 text-center"
-            >
-              Spots
-            </a>
-          </li>
+          
+          
           <li className="nav-item active">
             <a
               onClick={() => navigate("/about")}
