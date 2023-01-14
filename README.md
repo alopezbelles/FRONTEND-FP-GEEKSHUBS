@@ -75,6 +75,8 @@ La ultima sección de la aplicación es 'About'. Aquí encontramos una descripci
 
 
 **-->ADAPTACIÓN A DISPOSITIVOS**
+![lr-responsive](https://user-images.githubusercontent.com/113507322/212500200-0a8cdc33-d854-4c6a-9a4f-5adf259009a7.png)
+
 
 **RECURSOS ALTERNATIVOS**
 
