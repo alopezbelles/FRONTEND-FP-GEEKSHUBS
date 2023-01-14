@@ -1,65 +1,45 @@
-
-.navBar2{
-    background-color: #E5BFB2;
-    /* width: 100%; */
-    
+.navBar2 {
+  background-color: #e5bfb2;
+  /* width: 100%; */
 }
 
-.logoNavbar2{
-    margin-left: 20px;
-    width: 8vw;
-    size: auto;
+.logoNavbar2 {
+  margin-left: 20px;
+  width: 8vw;
+  size: auto;
 }
 
-/* #textRight{
-    display: flex;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right: 2em;
-    align-content: right;
-    justify-content: right;
-} */
-
-.linksRight{
-    display: flex;
-    color: white;
-    justify-content: right;
-    align-content: right;
-    /* margin-left: 2em; */
+.linksRight {
+  display: flex;
+  color: white;
+  justify-content: right;
+  align-content: right;
+  /* margin-left: 2em; */
 }
 
-
-.ulRight{
-    display: flex;
-    align-items: right;
-    justify-content: right;
+.ulRight {
+  display: flex;
+  align-items: right;
+  justify-content: right;
 }
 
-/* .navbar-collapse {
-    display: flex;
-    
-    justify-content: space-around;
-    text-align: center;
+.ulLeft:hover {
+  cursor: pointer;
+  display: flex;
+  justify-content: right;
+  align-content: right;
+}
+
+#textRight:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 630px) {
+  .logoNavbar2 {
+    width: 20vh;
   }
-   */
-.ulLeft:hover{
-    cursor: pointer;
-    display: flex;
-    justify-content: right;
-    align-content: right;
 }
 
-#textRight:hover{
-    cursor: pointer;
-}
-
-@media(max-width:630px){
-    .logoNavbar2{
-        width: 20vh;
-    }
-    
-    }
-
-.hover:hover{
-    cursor: pointer;
+.hover:hover {
+  cursor: pointer;
 }

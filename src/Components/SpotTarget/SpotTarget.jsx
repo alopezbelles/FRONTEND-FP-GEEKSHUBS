@@ -2,17 +2,7 @@ import React from "react";
 import "./SpotTarget.css";
 import { useSelector } from "react-redux";
 
-
-
-
 const SpotTarget = ({ spot, selectionSpot }) => {
-//   const cardBackground = {
-//     background:
-//       "url(https://xsurf.es/wp-content/uploads/2021/01/Surf-en-Espana.jpg)",
-//     backgroundSize: "cover",
-//   };
-
-
   const cardBackground = {
     backgroundImage: `url(${spot.imagepath})`,
     backgroundSize: "cover",

@@ -2,22 +2,17 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
-// import { useJwt } from "react-jwt";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import Image from "react-bootstrap/Image";
-// import videoBg from "../../aessets/beach-drone.mp4";
-// import videoBg2 from "../../aessets/beach-drone-2.mp4";
-// import videoBg3 from "../../aessets/waves-bg.mp4";
 import logoWaves from "../../aessets/logo_waves.png";
-// import bg from "../../aessets/beach-bg-image.jpg";
 import { Col, Container, Row } from "react-bootstrap";
+
+
 
 const Home = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
-  // let { decodedToken } = useJwt("jwt");
 
   if (token) {
     navigate("/spots");
@@ -50,8 +45,8 @@ const Home = () => {
       "https://backend-fp-geekshubs-production.up.railway.app/auth/register",
       body
     );
-  
-    navigate("/spots");
+
+    navigate("/login");
   };
 
   //Handlers//
@@ -121,25 +116,15 @@ const Home = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="bgConfig" >
+    <form onSubmit={submitHandler} className="bgConfig">
       <Container className=" homeDesign d-flex align-content-center justify-content-center">
         <Row
           className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0"
           style={{ margin: 0 }}
         >
-          {/* Esto es el video de bg de home, pero el navegador no lo reproduce */}
-          {/* <video
-            className="backgroundVideo"
-            src={videoBg3}
-            autoPlay
-            loop
-            muted
-          /> */}
-
           <Col className="col col-xl-7  contImage container-fluid">
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
-              
               <div className="incompleteError">{userError.incompleteerror}</div>
               <div className="incompleteError">
                 {userError.emailAlreadyInBBDD}

@@ -1,86 +1,73 @@
 
-/* @import url("https://fonts.googleapis.com/css?family=Inconsolata");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inconsolata';
-} */
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
 
-
-/* @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Sedgwick Ave Display', cursive;
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-
-
-.tittleSpot{
-    font-family: 'Sedgwick Ave Display', cursive;
-    font-size: 50px;
-    color: #004150;
+.tittleSpot {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 50px;
+  color: #004150;
 }
 
+.spotInfoDesign {
+  background-color: #dcd9d4;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    radial-gradient(
+      at 50% 0%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.5) 50%
+    );
+  background-blend-mode: soft-light, screen;
+  height: auto;
 
-
-
-.spotInfoDesign{
-    background-color: #c8d2d2;
-    height: auto;
-
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center;
-
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
 }
 
-.row1SpotinfoDesign{
-    height: 100%;
-    width: 100%;
-    padding: 2em;
-
-   
+.row1SpotinfoDesign {
+  height: 100%;
+  width: 100%;
+  padding: 2em;
 }
 
-.col1SpotinfoDesign{
-    height: 100%;
-    width: 50%;
-
+.col1SpotinfoDesign {
+  height: 100%;
+  width: 50%;
 }
 
-.col2SpotinfoDesign{
-    height: 100%;
-    width: 50%;
-    padding: 5em;
+.col2SpotinfoDesign {
+  height: 100%;
+  width: 50%;
+  padding: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageSpotinfo {
+  height: 90vh;
+  border-radius: 15px;
+}
+
+.starRating {
+  font-size: 40px;
+}
+
+@media (max-width: 700px) {
+  .row1SpotinfoDesign {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.imageSpotinfo{
-    height: 90vh;
-    border-radius: 15px;
-}
-
-.starRating{
-    font-size: 40px;
-}
-
-@media(max-width: 700px){
-    .row1SpotinfoDesign{
-        display:flex;
-        flex-direction: column;
-    }
-    .col1SpotinfoDesign{
-        width: 100%;
-    }
-    .col2SpotinfoDesign{
-        width: 100%;
-        padding: 1em;
-    }
+  }
+  .col1SpotinfoDesign {
+    width: 100%;
+  }
+  .col2SpotinfoDesign {
+    width: 100%;
+    padding: 1em;
+  }
 }

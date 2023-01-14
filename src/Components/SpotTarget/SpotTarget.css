@@ -1,5 +1,4 @@
-
-.targetDesign{
+.targetDesign {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,36 +15,24 @@
 
   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
 
-  filter: grayscale(70%)
-  
+  filter: grayscale(70%);
 }
 
-
-
-
-
-
 .targetDesign:hover {
-    
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.5s;
-    filter: none;
-    border-radius: 0px; 
-    box-shadow: none;
-    
-  
-  }
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.5s;
+  filter: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
 
-  .nameSpot{
-    color: white;
-    font-weight: bold;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  }
+.nameSpot {
+  color: white;
+  font-weight: bold;
+  font-family: "Sedgwick Ave Display", cursive;
+}
 
-  
-
-  .citySpot{
-    color: white;
-  }
+.citySpot {
+  color: white;
+}

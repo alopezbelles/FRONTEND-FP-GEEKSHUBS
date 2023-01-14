@@ -22,7 +22,7 @@ function Header2() {
 
   const logout = () => {
     localStorage.removeItem("jwt");
-    navigate("/");
+    navigate("/login");
   };
   useEffect(() => {
     const resizeListener = () => {

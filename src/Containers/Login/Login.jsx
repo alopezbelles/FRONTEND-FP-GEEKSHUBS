@@ -7,61 +7,57 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 
-
 import Image from "react-bootstrap/Image";
 import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Login = () => {
   const navigate = useNavigate();
-  
 
   const [user, setUser] = useState({
-    
     email: "",
     password: "",
   });
 
   const [userError, setUserError] = useState({
-    
     emailerror: "",
     passworderror: "",
     empty: "",
-    wrongCredentials: ""
-    
+    wrongCredentials: "",
   });
 
   let body = {
     email: user.email,
-    password: user.password
-  }
+    password: user.password,
+  };
 
   const loginUser = async (body) => {
     let res = await axios.post(
       "https://backend-fp-geekshubs-production.up.railway.app/auth/login",
-      // "http://localhost:3656/auth/login"
+
       body
     );
-    
+
     let jwt = res.data.jwt;
-    
+
     let credentials = {
       token: jwt,
     };
-    
+
     localStorage.setItem("jwt", credentials.token);
     navigate("/spots");
   };
 
   const validateBody = (body) => {
-    if (body.email !== "" && body.password !== "") { return true }
-  }
-
+    if (body.email !== "" && body.password !== "") {
+      return true;
+    }
+  };
 
   const submitLogin = (e) => {
     e.preventDefault();
     if (validateBody(body)) {
-        loginUser(body)
+      loginUser(body)
         .then((created) => console.log(created))
         .catch((error) => {
           setUserError((prevState) => ({
@@ -69,14 +65,13 @@ const Login = () => {
             wrongCredentials: error.response.data.message,
           }));
         });
-        
     } else {
       setUserError((prevState) => ({
         ...prevState,
-        empty: "Check all fields are filled"
-      }))
+        empty: "Check all fields are filled",
+      }));
     }
-  }
+  };
 
   //Handlers//
 
@@ -96,14 +91,13 @@ const Login = () => {
     }));
   };
 
-
-
   return (
-    <form className="bgConfig" onSubmit={submitLogin} >
-      <Container className=" homeDesign d-flex align-content-center justify-content-center" >
-        <Row className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0" style={{margin:0}}>
-          
-         
+    <form className="bgConfig" onSubmit={submitLogin}>
+      <Container className=" homeDesign d-flex align-content-center justify-content-center">
+        <Row
+          className="row container-fluid rowDesign d-flex justify-content-center align-content-center m-0"
+          style={{ margin: 0 }}
+        >
           <Col className="col col-xl-7  contImage container-fluid">
             <Image className="logoDesign" src={logoWaves}></Image>
             <div className="inputsBox d-flex flex-column align-items-center justify-content-center ">
@@ -111,9 +105,7 @@ const Login = () => {
               <div className="incompleteError">
                 {userError.wrongCredentials}
               </div>
-              
-             
-              
+
               <input
                 onBlur={(e) =>
                   errorHandler(e.target.name, e.target.value, "email")
@@ -138,19 +130,15 @@ const Login = () => {
               />
               <div className="errorInput">{userError.passworderror}</div>
 
-              
               <div className="col d-flex text-center align-items-center buttonDivReg">
                 <button className="buttonDesignRegister">LOGIN</button>
               </div>
-              <div onClick={() => navigate("/")} className="alredyRegister">Not registered yet? Register.</div>
+              <div onClick={() => navigate("/")} className="alredyRegister">
+                Not registered yet? Register.
+              </div>
             </div>
           </Col>
-
-          
         </Row>
-        
-         
-       
       </Container>
     </form>
   );
