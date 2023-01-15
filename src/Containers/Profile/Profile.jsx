@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
 
 import { errorCheck } from "../../services/usefull";
 import { editUser } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
-import { useNavigate } from "react-router-dom";
 
 import Image from "react-bootstrap/Image";
 import logoWaves from "../../aessets/logo_waves.png";
@@ -56,9 +56,11 @@ const Profile = () => {
     e.preventDefault();
     if (body.username == "") {
       delete body.username;
+      console.log(body.username)
     } else if ((body.password = "")) {
       delete body.password;
     }
+    console.log(body.username)
     editUser(body, token)
       .then(localStorage.removeItem("jwt"))
       .then(navigate("/login"));
@@ -73,30 +75,37 @@ const Profile = () => {
     return (
       <form className="bgProfile">
         <Container fluid className="profileDesign">
-          <Image className="logoDesign" src={logoWaves}></Image>
+          <Image className="logoDesignProfile" src={logoWaves}></Image>
           <Row className="row1Profile">
             <Col className="col1Profile">
-              <div className="inputsBoxProfile">
+                
+            
+              <div className="boxInfo">
                 <h3 className="yourDataText">Your User Data:</h3>
                 <div>{decodedToken.name}</div>
                 <div>{decodedToken.email}</div>
                 <div>{decodedToken.address}</div>
                 <div>{decodedToken.city}</div>
               </div>
+              
             </Col>
-            <Col onSubmit={submitHandler} className="col2Profile">
-              <div className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
+            <Col className="col2Profile">
+            {/* <form  > */}
+              <div onSubmit={submitHandler} className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
                 <div className="incompleteError">
                   {userError.incompleteerror}
                 </div>
+                <p className="yourDataText2">Want to update  your data?</p>
 
                 <input
                   className="inputRegDesign"
-                  type="Email"
-                  placeholder="  New email ... "
-                  name="email"
+                  type="text"
+                  placeholder="  New User Name ... "
+                  name="username"
+                  value={user.username}
+                  onChange={inputHandler}
                 />
-                <div className="errorInput">{userError.emailerror}</div>
+                
 
                 <input
                   onBlur={(e) =>
@@ -105,8 +114,8 @@ const Profile = () => {
                   onChange={inputHandler}
                   className="inputRegDesign"
                   type="Password"
-                  placeholder="  New password ... "
                   name="password"
+                  placeholder="  New password ... "
                 />
                 <div className="errorInput">{userError.passworderror}</div>
                 <input
@@ -132,13 +141,14 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
+              {/* </form> */}
             </Col>
           </Row>
         </Container>
       </form>
     );
   } else {
-    navigate("/about");
+    navigate("/");
   }
 };
 
