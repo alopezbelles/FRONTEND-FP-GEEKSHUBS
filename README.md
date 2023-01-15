@@ -62,6 +62,12 @@ Dentro de cada Spot tendremos la información específica de cada una de las loc
 
 ![spots-info](https://user-images.githubusercontent.com/113507322/212490974-9e2fe0b4-72ec-4647-9aa2-d83bf81cff91.png)
 
+**-->PROFILE**
+En esta pantalla tenemos acceso a nuestros datos de usuario y a cambiar nuestro 'username' y la contraseña. 
+
+
+![profile](https://user-images.githubusercontent.com/113507322/212570320-d4e5ccca-aec6-4704-828f-ccb72d2abd88.png)
+
 
 
 **-->ABOUT**
