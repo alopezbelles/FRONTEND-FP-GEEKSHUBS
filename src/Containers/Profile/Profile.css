@@ -1,0 +1,63 @@
+
+.profileDesign{
+  width: 100vw;
+  height: 90vh;
+}
+
+.bgProfile{
+    background: url(../../aessets/beach-bg-image-3.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+.col2Profile{
+    width: 100%;
+    height: 100%;
+    margin-top: 2em;
+   display: flex;
+   /* align-items: center; */
+   justify-content: start;
+}
+
+.col1Profile{
+    width: 100%;
+    height: 100%;
+    margin-top: 2em;
+   display: flex;
+   /* align-items: center; */
+   justify-content: end;
+}
+
+.yourDataText{
+    font-family: "Sedgwick Ave Display", cursive;
+}
+
+
+@media (max-width: 600px) {
+    .row1Profile{
+        /* display: flex; */
+        flex-direction: column; 
+    }
+  } 
+
+  .inputsBoxProfile {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 1em;
+    padding-bottom: 2em;
+    width: 60%;
+    height: 80%;
+    border-radius: 5px;
+    gap: 0.3em;
+  
+    backdrop-filter: blur(13px);
+    border: solid 1px rgba(255, 255, 255, 0.3);
+  
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .row1Profile{
+    display: flex; 
+    flex-direction: row;
+    
+  }
