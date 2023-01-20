@@ -52,6 +52,9 @@ const SpotInfo = () => {
           <h1 className="tittleSpot">{selectedSpot.spotname}</h1>
           <h4 className="starRating">{topRated(selectedSpot.rating)}</h4>
           <h5 className="">{selectedSpot.city.toUpperCase()}</h5>
+          <button className="buttonDesignRegister">
+                    SAVE THIS SPOT
+                  </button>
           <p className="">{selectedSpot.conditions}</p>
           <p className="">Tipo de playa: {selectedSpot.type.toUpperCase()}</p>
           <p className="">

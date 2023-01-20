@@ -114,6 +114,8 @@ const Profile = () => {
                   onChange={inputHandler}
                   className="inputRegDesign"
                   type="Password"
+                  value={user.password}
+
                   name="password"
                   placeholder="  New password ... "
                 />
@@ -132,6 +134,8 @@ const Profile = () => {
                   type="Password"
                   placeholder="  Repeat password ... "
                   name="password2"
+                  value={user.password2}
+
                 />
                 <div className="errorInput">{userError.password2error}</div>
 

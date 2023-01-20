@@ -67,6 +67,8 @@ export const allSpots = async () => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
+    console.log(config)
+    console.log("aqui en editUser")
     const bodyParameters = {
       username: body.username,
       password: body.password,
