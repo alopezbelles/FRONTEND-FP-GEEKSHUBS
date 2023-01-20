@@ -27,6 +27,7 @@ export const spotsSlice = createSlice({
     },
   });
 
+  export const userData = (state) => state.user;
   export const placeData = (state) => state.spot;
   export default spotsSlice.reducer;
   export const { addPlace, addCriteria } = spotsSlice.actions;

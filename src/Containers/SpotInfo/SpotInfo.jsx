@@ -1,18 +1,51 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useJwt } from "react-jwt";
 
-import { placeData } from "../../Containers/Spots/spotsSlice";
+
+
+import { placeData,userData } from "../../Containers/Spots/spotsSlice";
 import "./SpotInfo.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 
 // import Image from "react-bootstrap/Image";
 
+const URL = "https://backend-fp-geekshubs-production.up.railway.app";
+
+
 const SpotInfo = () => {
   const selectedSpot = useSelector(placeData);
+  const userInfo = useSelector(userData);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("jwt");
+  let {decodedToken} = useJwt(token);
+
+
+
   const image = selectedSpot.imagepath;
+
   let lifeguard = selectedSpot.lifeguard;
+
+  const saveSpot = async (body, token) => {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    const bodyParameters = {
+      SpotIdSpot: body.id_spot,
+      UserIdUser: decodedToken.id,
+      
+    };
+    console.log(bodyParameters)
+    try {
+     await axios.post(`${URL}/spots/savespot`, bodyParameters, config);
+      navigate("/spots");
+    } catch (error) {
+    }
+  };
+
 
   const topRated = () => {
     switch (selectedSpot.rating) {
@@ -42,20 +75,17 @@ const SpotInfo = () => {
             }}
             className="imageSpotinfo"
           >
-            {/* <img 
-            className="" 
-            src={image}
-            alt="spot capture" /> */}
+            
           </div>
         </Col>
         <Col className="   col2SpotinfoDesign">
           <h1 className="tittleSpot">{selectedSpot.spotname}</h1>
           <h4 className="starRating">{topRated(selectedSpot.rating)}</h4>
           <h5 className="">{selectedSpot.city.toUpperCase()}</h5>
-          <button className="buttonDesignRegister">
+          <div onClick={()=>saveSpot(selectedSpot, token)} className="buttonDesignRegister">
                     SAVE THIS SPOT
-                  </button>
-          <p className="">{selectedSpot.conditions}</p>
+                  </div>
+          <p className="conditionsText">{selectedSpot.conditions}</p>
           <p className="">Tipo de playa: {selectedSpot.type.toUpperCase()}</p>
           <p className="">
             Dónde se encuentra: {selectedSpot.adress.toUpperCase()}
