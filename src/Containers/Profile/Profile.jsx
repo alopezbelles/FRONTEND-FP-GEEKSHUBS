@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { savesData } from "../../Containers/Spots/spotsSlice";
+// import { getMySpots } from "../../services/ApiCalls"; 
+// import axios from "axios";
 
 import { errorCheck } from "../../services/usefull";
 import { editUser } from "../../services/ApiCalls";
@@ -12,9 +16,18 @@ import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Profile = () => {
+  // const mySpots = useSelector(savesData);
+  // const mySpots = useState([]);
+
+  // const nameSpot = mySpots
+  // console.log(nameSpot)
+
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   let { decodedToken } = useJwt(token);
+  // const id = decodedToken.id;
+
+  // const [userspot, setUserspot] = useState([])
 
   const [user, setUser] = useState({
     username: "",
@@ -147,6 +160,30 @@ const Profile = () => {
               </div>
               {/* </form> */}
             </Col>
+          </Row>
+          {/* AQUÍ TENDRÉ QUE MOSTRAR MIS ALQUILERES */}
+          <Row>
+            <h2 className="yourDataText">These are my spots:</h2>
+
+           
+            {/* Aquí meter el componente de mis spots guardados */}
+
+           
+
+
+            {/* {mySpots.map((Userspots) =>
+            <div>
+
+              <h2>{Userspots.id_userspot}</h2>
+
+            </div>
+            
+          
+          )} */}
+            <div>
+              {/* {axios.get(getMySpots)} */}
+            </div>
+
           </Row>
         </Container>
       </form>

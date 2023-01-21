@@ -5,7 +5,7 @@ import "./Spots.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { allSpots } from "../../services/ApiCalls"; //esto es all spots
+import { allSpots } from "../../services/ApiCalls"; 
 import { addPlace, placeData } from "../../Containers/Spots/spotsSlice";
 
 import SpotTarget from "../../Components/SpotTarget/SpotTarget";
@@ -71,7 +71,7 @@ const Spots = () => {
             level and which are the best seasons for surfing. Take advantage of
             the experiences of other users and discover which are the best
             beaches around you to practice sport in an environment tested for
-            it.{" "}
+            it.
           </Col>
         </Row>
         <Row className="row2Spots">

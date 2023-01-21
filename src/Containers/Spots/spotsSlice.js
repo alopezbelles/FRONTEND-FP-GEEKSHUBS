@@ -27,7 +27,7 @@ export const spotsSlice = createSlice({
     },
   });
 
-  export const userData = (state) => state.user;
   export const placeData = (state) => state.spot;
+  // export const savesData = (state) => state.userspots //esto lo puedo borrar
   export default spotsSlice.reducer;
   export const { addPlace, addCriteria } = spotsSlice.actions;
