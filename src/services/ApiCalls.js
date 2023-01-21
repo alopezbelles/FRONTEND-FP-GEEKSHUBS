@@ -38,24 +38,24 @@ export const allSpots = async () => {
   };
 
 
-  export const getMySpots = async (token) => {
+  // export const getMySpots = async (token) => {
 
-    var config = {
-      headers: {
-        Authorization : "Bearer" + token
-      }
-    };
+  //   var config = {
+  //     headers: {
+  //       Authorization : "Bearer" + token
+  //     }
+  //   };
 
-    return axios.get(axios.get(`${URL}/spots/myspots/`, config))
-  };
-
-  // export const getMySpots = async (idCriteria) => {
-  //   try {
-  //     let res = await axios.get(`${URL}/spots/myspots/${idCriteria}`);
-  //     return res.data;
-  //   } catch (error) {
-  //   }
+  //   return axios.get(axios.get(`${URL}/spots/myspots/`, config))
   // };
+
+  export const getMySpots = async (idCriteria) => {
+    try {
+      let res = await axios.get(`${URL}/spots/myspots/${idCriteria}`);
+      return res.data;
+    } catch (error) {
+    }
+  };
   
   // export const getMySpots = async () => {
   //   try {

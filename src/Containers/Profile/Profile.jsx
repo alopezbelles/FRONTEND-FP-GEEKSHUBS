@@ -14,6 +14,7 @@ import { useJwt } from "react-jwt";
 import Image from "react-bootstrap/Image";
 import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
+import SavedSpots from "../Spots/SavedSpots";
 
 const Profile = () => {
   // const mySpots = useSelector(savesData);
@@ -165,7 +166,7 @@ const Profile = () => {
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
 
-           
+           <SavedSpots/>
             {/* Aquí meter el componente de mis spots guardados */}
 
            
