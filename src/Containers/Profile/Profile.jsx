@@ -97,7 +97,7 @@ const Profile = () => {
 
   if (decodedToken) {
     return (
-      <form  onSubmit={submitHandler} className="bgProfile">
+      <form   className="bgProfile">
         <Container fluid className="profileDesign">
           <Image className="logoDesignProfile" src={logoWaves}></Image>
           <Row className="row1Profile">
@@ -115,7 +115,7 @@ const Profile = () => {
               
             </Col>
             <Col className="col2Profile">
-            {/* <form  > */}
+            <form onSubmit={submitHandler} >
               <div className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
                 <div className="incompleteError">
                   {userError.incompleteerror}
@@ -170,14 +170,14 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              {/* </form> */}
+              </form>
             </Col>
           </Row>
           {/* AQUÍ TENDRÉ QUE MOSTRAR MIS ALQUILERES */}
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
 
-           {/* <SavedSpots/> */}
+           <SavedSpots/>
            
           
           </Row>

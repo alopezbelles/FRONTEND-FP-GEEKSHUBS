@@ -38,16 +38,7 @@ export const allSpots = async () => {
   };
 
 
-  // export const getMySpots = async (token) => {
-
-  //   var config = {
-  //     headers: {
-  //       Authorization : "Bearer" + token
-  //     }
-  //   };
-
-  //   return axios.get(axios.get(`${URL}/spots/myspots/`, config))
-  // };
+ 
 
   export const getMySpots = async (id) => {
     try {
@@ -57,15 +48,7 @@ export const allSpots = async () => {
     }
   };
   
-  // export const getMySpots = async () => {
-  //   try {
-  //     let res = await axios.get(`${URL}/spots/myspots/`);
-  //     return res.data;
-  //   } catch (error) {
-  //   }
-  // };
-  
-  
+
 
   //PETICIONES CON POST
 
@@ -92,6 +75,8 @@ export const allSpots = async () => {
     }
   };
 
+  
+
   export const editUser = async (body, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -117,4 +102,12 @@ export const allSpots = async () => {
 
 
     //PETICIONES CON DELETE
+    
+    export const deleteMySpot = async (id) => {
+      try {
+        let res = await axios.delete(`${URL}/spots/deletemyspot/${id}`);
+        return res.data;
+      } catch (error) {
+      }
+    };
     
