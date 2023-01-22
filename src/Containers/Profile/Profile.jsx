@@ -102,10 +102,11 @@ const Profile = () => {
             
               <div className="boxInfo">
                 <h3 className="yourDataText">Your User Data:</h3>
-                <div>{decodedToken.name}</div>
-                <div>{decodedToken.email}</div>
-                <div>{decodedToken.address}</div>
-                <div>{decodedToken.city}</div>
+                <div>Username: {decodedToken.username}</div>
+                <div>Email: {decodedToken.email}</div>
+                <div>Address: {decodedToken.address}</div>
+                <div>City: {decodedToken.city}</div>
+                <div>Your ID: {decodedToken.id}</div>
               </div>
               
             </Col>
