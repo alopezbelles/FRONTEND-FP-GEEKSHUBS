@@ -32,14 +32,16 @@ const Profile = () => {
 
   const [user, setUser] = useState({
     username: "",
-    password: "",
-    password2: "",
+    email: "",
+    // password: "",
+    // password2: "",
   });
 
   const [userError, setUserError] = useState({
     usernameerror: "",
-    passworderror: "",
-    password2error: "",
+    emailerror: "",
+    // passworderror: "",
+    // password2error: "",
     incompleteerror: "",
   });
 
@@ -63,9 +65,9 @@ const Profile = () => {
     }));
   };
 
-  const errorHandler = (field, value, type, password1) => {
+  const errorHandler = (field, value, type) => {
     let error = "";
-    error = errorCheck(value, type, password1);
+    error = errorCheck(value, type);
     setUserError((prevState) => ({
       ...prevState,
       [field + "error"]: error,
@@ -77,9 +79,10 @@ const Profile = () => {
     if (body.username == "") {
       delete body.username;
       // console.log(body.username)
-    } else if ((body.password = "")) {
-      delete body.password;
-    }
+    } 
+    // else if ((body.password = "")) {
+    //   delete body.password;
+    // }
     // console.log(body.username)
     editUser(body, token)
       .then(localStorage.removeItem("jwt"))
@@ -88,7 +91,8 @@ const Profile = () => {
 
   const body = {
     username: user.username,
-    password: user.password,
+    email: user.email,
+    // password: user.password,
   };
 
   if (decodedToken) {
@@ -130,18 +134,18 @@ const Profile = () => {
 
                 <input
                   onBlur={(e) =>
-                    errorHandler(e.target.name, e.target.value, "password")
+                    errorHandler(e.target.name, e.target.value, "email")
                   }
                   onChange={inputHandler}
                   className="inputRegDesign"
-                  type="Password"
+                  type="Email"
                   // value={user.password}
 
-                  name="password"
-                  placeholder="  New password ... "
+                  name="email"
+                  placeholder="  New email ... "
                 />
-                <div className="errorInput">{userError.passworderror}</div>
-                <input
+                <div className="errorInput">{userError.emailerror}</div>
+                {/* <input
                   onBlur={(e) =>
                     errorHandler(
                       e.target.name,
@@ -157,8 +161,8 @@ const Profile = () => {
                   name="password2"
                   // value={user.password2}
 
-                />
-                <div className="errorInput">{userError.password2error}</div>
+                /> */}
+                {/* <div className="errorInput">{userError.password2error}</div> */}
 
                 <div className="col d-flex text-center align-items-center buttonDivReg">
                   <button className="buttonDesignRegister">

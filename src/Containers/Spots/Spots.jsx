@@ -61,10 +61,8 @@ const Spots = () => {
     );
   } else {
     return (
-      <div className="">
-        
-      </div>
-    );
+      navigate("/about")
+    )
   }
 };
 

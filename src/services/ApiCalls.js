@@ -52,7 +52,7 @@ export const allSpots = async () => {
   export const getMySpots = async (id) => {
     try {
       let res = await axios.get(`${URL}/spots/myspots/${id}`);
-      return res.data.results;
+      return res.data;
     } catch (error) {
     }
   };
@@ -100,7 +100,7 @@ export const allSpots = async () => {
     console.log("aqui en editUser")
     const bodyParameters = {
       username: body.username,
-      password: body.password,
+      email: body.email,
     };
     console.log(bodyParameters)
     console.log("aqui en bodyParameters")
