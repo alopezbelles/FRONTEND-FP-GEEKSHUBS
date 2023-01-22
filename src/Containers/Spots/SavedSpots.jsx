@@ -4,8 +4,8 @@ import "./SavedSpots.css";
 import { getMySpots } from "../../services/ApiCalls";
 import { deleteMySpot } from "../../services/ApiCalls";
 
-import { userData } from "../Spots/userSlice";
-import { useSelector } from "react-redux";
+// import { userData } from "../Spots/userSlice";
+// import { useSelector } from "react-redux";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 //Esto lo importo para poder sacar el id con el token
@@ -31,7 +31,7 @@ const SavedSpots = () => {
 
 
   const spots = () => {
-    getMySpots(18)
+    getMySpots(21)
       .then((res) => {
         console.log(res);
         setSavedSpots(res);
