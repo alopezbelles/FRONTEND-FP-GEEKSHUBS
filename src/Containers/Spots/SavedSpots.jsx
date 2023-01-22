@@ -16,8 +16,8 @@ import { useJwt } from "react-jwt";
 const SavedSpots = () => {
 //Esto lo uso para poder sacar la id del usuario con el token
     const token = localStorage.getItem("jwt");
-  let { decodedToken } = useJwt(token);
-  const idUser = decodedToken.id
+  // let { decodedToken } = useJwt(token);
+  // const idUser = decodedToken.id
 
 
     const [savedSpots, setSavedSpots] = useState([]);
@@ -27,7 +27,7 @@ const SavedSpots = () => {
     const userCredentials = useSelector(userData);
 
     const spots = () => {
-        getMySpots(idUser)
+        getMySpots()
           .then((res) => {
             setSavedSpots(res.data.data);
           })

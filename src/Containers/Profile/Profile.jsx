@@ -50,6 +50,12 @@ const Profile = () => {
     }));
   }, [decodedToken]);
 
+  // const validateBody = (body) => {
+  //   if (body.username !== "" && body.password !== "" && body.password2 !== "") {
+  //     return true;
+  //   }
+  // };
+
   const inputHandler = (e) => {
     setUser((prevState) => ({
       ...prevState,
@@ -70,11 +76,11 @@ const Profile = () => {
     e.preventDefault();
     if (body.username == "") {
       delete body.username;
-      console.log(body.username)
+      // console.log(body.username)
     } else if ((body.password = "")) {
       delete body.password;
     }
-    console.log(body.username)
+    // console.log(body.username)
     editUser(body, token)
       .then(localStorage.removeItem("jwt"))
       .then(navigate("/login"));
@@ -87,7 +93,7 @@ const Profile = () => {
 
   if (decodedToken) {
     return (
-      <form className="bgProfile">
+      <form  onSubmit={submitHandler} className="bgProfile">
         <Container fluid className="profileDesign">
           <Image className="logoDesignProfile" src={logoWaves}></Image>
           <Row className="row1Profile">
@@ -105,7 +111,7 @@ const Profile = () => {
             </Col>
             <Col className="col2Profile">
             {/* <form  > */}
-              <div onSubmit={submitHandler} className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
+              <div className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
                 <div className="incompleteError">
                   {userError.incompleteerror}
                 </div>
@@ -128,7 +134,7 @@ const Profile = () => {
                   onChange={inputHandler}
                   className="inputRegDesign"
                   type="Password"
-                  value={user.password}
+                  // value={user.password}
 
                   name="password"
                   placeholder="  New password ... "
@@ -148,7 +154,7 @@ const Profile = () => {
                   type="Password"
                   placeholder="  Repeat password ... "
                   name="password2"
-                  value={user.password2}
+                  // value={user.password2}
 
                 />
                 <div className="errorInput">{userError.password2error}</div>
@@ -166,25 +172,9 @@ const Profile = () => {
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
 
-           <SavedSpots/>
-            {/* Aquí meter el componente de mis spots guardados */}
-
+           {/* <SavedSpots/> */}
            
-
-
-            {/* {mySpots.map((Userspots) =>
-            <div>
-
-              <h2>{Userspots.id_userspot}</h2>
-
-            </div>
-            
           
-          )} */}
-            <div>
-              {/* {axios.get(getMySpots)} */}
-            </div>
-
           </Row>
         </Container>
       </form>

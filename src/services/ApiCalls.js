@@ -49,10 +49,10 @@ export const allSpots = async () => {
   //   return axios.get(axios.get(`${URL}/spots/myspots/`, config))
   // };
 
-  export const getMySpots = async (idCriteria) => {
+  export const getMySpots = async (id) => {
     try {
-      let res = await axios.get(`${URL}/spots/myspots/${idCriteria}`);
-      return res.data;
+      let res = await axios.get(`${URL}/spots/myspots/${id}`);
+      return res.data.results;
     } catch (error) {
     }
   };
@@ -102,10 +102,19 @@ export const allSpots = async () => {
       username: body.username,
       password: body.password,
     };
+    console.log(bodyParameters)
+    console.log("aqui en bodyParameters")
+
     try {
       let res = await axios.patch(`${URL}/users/edit`, bodyParameters, config);
       return res.data.resp;
+      
     } catch (error) {
+
       console.error(error);
     }
   };
+
+
+    //PETICIONES CON DELETE
+    

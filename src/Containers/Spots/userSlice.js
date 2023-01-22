@@ -7,21 +7,21 @@ export const userSlice = createSlice({
     token: "",
    
   },
-  reducers: {
-    login: (state, action) => {
-      return {
-        ...state,
-        ...action.payload,
-        loggedIn: true
-      };
-    },
-    userout: (state, action) => {
-      return {
-        ...state,
-        ...action.payload
-      };
-    }
-  }
+//   reducers: {
+//     login: (state, action) => {
+//       return {
+//         ...state,
+//         ...action.payload,
+//         loggedIn: true
+//       };
+//     },
+//     userout: (state, action) => {
+//       return {
+//         ...state,
+//         ...action.payload
+//       };
+//     }
+//   }
 });
 
 // export const { login, userout } = userSlice.actions;
