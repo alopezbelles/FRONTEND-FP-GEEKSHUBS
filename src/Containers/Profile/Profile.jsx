@@ -97,8 +97,8 @@ const Profile = () => {
 
   if (decodedToken) {
     return (
-      <form   className="bgProfile">
-        <Container fluid className="profileDesign">
+      
+        <Container fluid className="profileDesign bgProfile">
           <Image className="logoDesignProfile" src={logoWaves}></Image>
           <Row className="row1Profile">
             <Col className="col1Profile">
@@ -173,16 +173,18 @@ const Profile = () => {
               </form>
             </Col>
           </Row>
+            <form>
           {/* AQUÍ TENDRÉ QUE MOSTRAR MIS ALQUILERES */}
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
 
-           <SavedSpots/>
+           <SavedSpots />
            
           
           </Row>
+          </form>
         </Container>
-      </form>
+      
     );
   } else {
     navigate("/");
