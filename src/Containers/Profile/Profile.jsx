@@ -1,82 +1,52 @@
 import React, { useState, useEffect } from "react";
+//BOOTSTRAP
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Col, Container, Row } from "react-bootstrap";
 import "./Profile.css";
+// SERVICES, STYLES, AESSETS
 import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { savesData } from "../../Containers/Spots/spotsSlice";
-
 import { errorCheck } from "../../services/usefull";
 import { editUser } from "../../services/ApiCalls";
 import { getMyUserData } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
-import { useDispatch } from "react-redux";
 import Image from "react-bootstrap/Image";
 import logoWaves from "../../aessets/logo_waves.png";
-import { Col, Container, Row } from "react-bootstrap";
+// COMPONENTS
 import SavedSpots from "../Spots/SavedSpots";
+// REDUX
+import { useDispatch } from "react-redux";
 import { login } from "../Spots/userSlice";
 
 const Profile = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   let { decodedToken } = useJwt(token);
-  // const id = decodedToken.id;
 
-  // const [userspot, setUserspot] = useState([])
-
-  // const dataUser = {
-  //   id: decodedToken.id,
-  //   name: decodedToken.name,
-  //   username: decodedToken.username,
-  //   password: decodedToken.password,
-  // }
-
-
-
-
-
-// console.log(decodedToken)
-// console.log(decodedToken.id)
-  const userData = () =>
-    { setUser((prevState) => ({
+  const userData = () => {
+    setUser((prevState) => ({
       ...prevState,
       username: decodedToken?.username,
     }));
-    getMyUserData(token)
-    .then (res => {dispatch(
-      login({ credentials: res })
-    );})
-    
-  }
-
-
+    getMyUserData(token).then((res) => {
+      dispatch(login({ credentials: res }));
+    });
+  };
 
   const [user, setUser] = useState({
     username: "",
     email: "",
-    // password: "",
-    // password2: "",
   });
 
   const [userError, setUserError] = useState({
     usernameerror: "",
     emailerror: "",
-    // passworderror: "",
-    // password2error: "",
     incompleteerror: "",
   });
 
   useEffect(() => {
-    userData()
+    userData();
   }, []);
-
-  // const validateBody = (body) => {
-  //   if (body.username !== "" && body.password !== "" && body.password2 !== "") {
-  //     return true;
-  //   }
-  // };
 
   const inputHandler = (e) => {
     setUser((prevState) => ({
@@ -98,12 +68,8 @@ const Profile = () => {
     e.preventDefault();
     if (body.username == "") {
       delete body.username;
-      // console.log(body.username)
-    } 
-    // else if ((body.password = "")) {
-    //   delete body.password;
-    // }
-    // console.log(body.username)
+    }
+
     editUser(body, token)
       .then(localStorage.removeItem("jwt"))
       .then(navigate("/login"));
@@ -112,35 +78,30 @@ const Profile = () => {
   const body = {
     username: user.username,
     email: user.email,
-    // password: user.password,
   };
 
   if (decodedToken) {
     return (
-      
-        <Container fluid className="profileDesign bgProfile">
-          <Image className="logoDesignProfile" src={logoWaves}></Image>
-          <Row className="row1Profile">
-            <Col className="col1Profile">
-                
-            
-              <div className="boxInfo">
-                <h3 className="yourDataText">Your User Data:</h3>
-                <div>Username: {decodedToken.username}</div>
-                <div>Email: {decodedToken.email}</div>
-                <div>Address: {decodedToken.address}</div>
-                <div>City: {decodedToken.city}</div>
-                <div>Your ID: {decodedToken.id}</div>
-              </div>
-              
-            </Col>
-            <Col className="col2Profile">
-            <div onSubmit={submitHandler} >
+      <Container fluid className="profileDesign bgProfile">
+        <Image className="logoDesignProfile" src={logoWaves}></Image>
+        <Row className="row1Profile">
+          <Col className="col1Profile">
+            <div className="boxInfo">
+              <h3 className="yourDataText">Your User Data:</h3>
+              <div>Username: {decodedToken.username}</div>
+              <div>Email: {decodedToken.email}</div>
+              <div>Address: {decodedToken.address}</div>
+              <div>City: {decodedToken.city}</div>
+              <div>Your ID: {decodedToken.id}</div>
+            </div>
+          </Col>
+          <Col className="col2Profile">
+            <form onSubmit={submitHandler}>
               <div className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
                 <div className="incompleteError">
                   {userError.incompleteerror}
                 </div>
-                <p className="yourDataText2">Want to update  your data?</p>
+                <p className="yourDataText2">Want to update your data?</p>
 
                 <input
                   className="inputRegDesign"
@@ -150,7 +111,6 @@ const Profile = () => {
                   value={user.username}
                   onChange={inputHandler}
                 />
-                
 
                 <input
                   onBlur={(e) =>
@@ -159,30 +119,10 @@ const Profile = () => {
                   onChange={inputHandler}
                   className="inputRegDesign"
                   type="Email"
-                  // value={user.password}
-
                   name="email"
                   placeholder="  New email ... "
                 />
                 <div className="errorInput">{userError.emailerror}</div>
-                {/* <input
-                  onBlur={(e) =>
-                    errorHandler(
-                      e.target.name,
-                      e.target.value,
-                      "password2",
-                      user.password
-                    )
-                  }
-                  onChange={inputHandler}
-                  className="inputRegDesign"
-                  type="Password"
-                  placeholder="  Repeat password ... "
-                  name="password2"
-                  // value={user.password2}
-
-                /> */}
-                {/* <div className="errorInput">{userError.password2error}</div> */}
 
                 <div className="col d-flex text-center align-items-center buttonDivReg">
                   <button className="buttonDesignRegister">
@@ -190,21 +130,18 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              </div>
-            </Col>
-          </Row>
-            <div>
-          {/* AQUÍ TENDRÉ QUE MOSTRAR MIS ALQUILERES */}
+            </form>
+          </Col>
+        </Row>
+        <div>
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
 
-           <SavedSpots />
-           
-          
+            {/* Este componente muestra mis spots guardados */}
+            <SavedSpots />
           </Row>
-          </div>
-        </Container>
-      
+        </div>
+      </Container>
     );
   } else {
     navigate("/");

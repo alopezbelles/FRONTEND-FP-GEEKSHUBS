@@ -9,7 +9,6 @@ import "./SpotInfo.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 
-// import Image from "react-bootstrap/Image";
 
 const URL = "https://backend-fp-geekshubs-production.up.railway.app";
 
@@ -32,7 +31,7 @@ const SpotInfo = () => {
       SpotIdSpot: body.id_spot,
       UserIdUser: decodedToken.id,
     };
-    console.log(bodyParameters);
+    
     try {
       await axios.post(`${URL}/spots/savespot`, bodyParameters, config);
       navigate("/spots");

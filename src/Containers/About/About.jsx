@@ -1,8 +1,9 @@
 import React from "react";
 import "./About.css";
-
+// BOOTSTRAP
 import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import Image from "react-bootstrap/Image";
 import icon1 from "../../aessets/icon1.png";
 import icon2 from "../../aessets/icon2.png";
@@ -14,14 +15,15 @@ import icon7 from "../../aessets/twitter.png";
 
 const About = () => {
   return (
-    <Container fluid className="aboutDesign d-flex flex-column align-content-center justify-content-center">
-      <Row  className="row1Design d-flex align-content-center justify-content-center">
-        <Col  className="col1Design">About Waves.</Col>
+    <Container
+      fluid
+      className="aboutDesign d-flex flex-column align-content-center justify-content-center"
+    >
+      <Row className="row1Design d-flex align-content-center justify-content-center">
+        <Col className="col1Design">About Waves.</Col>
       </Row>
 
       <Row className="row2Design justify-content-evenly">
-        {/* <Col className="infoBox">Col
-            </Col> */}
         <div className="infoBox">
           <Image className="iconDesign" src={icon1}></Image>
         </div>

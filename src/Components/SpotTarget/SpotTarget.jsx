@@ -1,6 +1,5 @@
 import React from "react";
 import "./SpotTarget.css";
-import { useSelector } from "react-redux";
 
 const SpotTarget = ({ spot, selectionSpot }) => {
   const cardBackground = {

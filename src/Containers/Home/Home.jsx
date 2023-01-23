@@ -56,7 +56,7 @@ const Home = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    // console.log(inputHandler)
+    
   };
 
   const errorHandler = (field, value, type, password1) => {

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useJwt } from "react-jwt";
-
+// BOOTSTRAP
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Col, Container, Row } from "react-bootstrap";
-import "./Header2.css";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+// STYLES AND AESSETS
+import "./Header2.css";
 import logoWaves from "../../aessets/logo_waves.png";
 import Image from "react-bootstrap/Image";
 

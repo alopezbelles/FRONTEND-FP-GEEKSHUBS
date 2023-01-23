@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./SavedSpots.css";
-import { useNavigate } from "react-router-dom";
-
 
 import { getMySpots } from "../../services/ApiCalls";
 import { deleteMySpot } from "../../services/ApiCalls";
-import { useJwt } from "react-jwt";
 
 import { userData } from "../Spots/userSlice";
 import { useSelector } from "react-redux";
@@ -13,17 +10,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 
 //Esto lo importo para poder sacar el id con el token
 
-
 const SavedSpots = () => {
-  // const navigate = useNavigate();
-  //Esto lo uso para poder sacar la id del usuario con el token
-  const token = localStorage.getItem("jwt");
-  // let { decodedToken } = useJwt(token);
-  // console.log(token)
-  // console.log(decodedToken)
-  // const idUser = decodedToken.id
-  // console.log(idUser)
-
 
   const [savedSpots, setSavedSpots] = useState([]);
   const [error, setError] = useState("");
@@ -31,11 +18,8 @@ const SavedSpots = () => {
   const credentialsUser = useSelector(userData);
 
   const deleteSpot = (id) => {
-    deleteMySpot(id)
-    .then((res) => spots())
-    
-  }
-
+    deleteMySpot(id).then((res) => spots());
+  };
 
   const spots = () => {
     getMySpots(credentialsUser.credentials.id)
@@ -46,15 +30,12 @@ const SavedSpots = () => {
       .catch((error) => {
         setError(error.response?.data || "No se pueden obtener los spots");
       });
-    };
-    
-    useEffect(() => {
-      spots();
-      console.log(savedSpots)
-  }, []);
+  };
 
-  
- 
+  useEffect(() => {
+    spots();
+    
+  }, []);
 
   if (error) {
     return <h2>{error} </h2>;
@@ -67,16 +48,14 @@ const SavedSpots = () => {
           <Col className="d-flex col-12 flex-wrap  justify-content-center">
             {savedSpots.map((savedSpots) => {
               return (
-                <Card                  
-                  className="cards"
-                  key={savedSpots.data}
-                  
-                >
+                <Card className="cards" key={savedSpots.data}>
                   <Card.Body>
-                    <Card.Title>{savedSpots.Spot.spotname}</Card.Title>                    
+                    <Card.Title>{savedSpots.Spot.spotname}</Card.Title>
                     <Card.Text>{savedSpots.Spot.city}</Card.Text>
                     <Card.Text></Card.Text>
-                    <button onClick={()=>deleteSpot(savedSpots.id_userspot)} >Delete</button>
+                    <button onClick={() => deleteSpot(savedSpots.id_userspot)}>
+                      Delete
+                    </button>
                   </Card.Body>
                 </Card>
               );
