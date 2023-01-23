@@ -14,16 +14,11 @@ export const userSlice = createSlice({
         loggedIn: true
       };
     },
-    userout: (state, action) => {
-      return {
-        ...state,
-        ...action.payload
-      };
-    }
+    
   }
 });
 
-export const { login, userout } = userSlice.actions;
+export const { login } = userSlice.actions;
 
 
 

@@ -92,7 +92,6 @@ const Profile = () => {
               <div>Email: {decodedToken.email}</div>
               <div>Address: {decodedToken.address}</div>
               <div>City: {decodedToken.city}</div>
-              <div>Your ID: {decodedToken.id}</div>
             </div>
           </Col>
           <Col className="col2Profile">

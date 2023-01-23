@@ -4,9 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Spots.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { allSpots } from "../../services/ApiCalls"; 
-import { addPlace, placeData } from "../../Containers/Spots/spotsSlice";
+import { addPlace } from "../../Containers/Spots/spotsSlice";
 
 import SpotTarget from "../../Components/SpotTarget/SpotTarget";
 
@@ -20,9 +20,7 @@ const Spots = () => {
     dispatch(addPlace({ ...spot, details: spot }));
     navigate("/spotinfo");
   };
-  const searchedSpot = useSelector(placeData);
-  const query = searchedSpot.query;
-  const places = searchedSpot.search;
+
 
   useEffect(() => {
     if (spots.length === 0) {

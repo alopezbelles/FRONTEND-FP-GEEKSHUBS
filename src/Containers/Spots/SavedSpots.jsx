@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./SavedSpots.css";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 import { getMySpots } from "../../services/ApiCalls";
 import { deleteMySpot } from "../../services/ApiCalls";
-
+// REDUX
 import { userData } from "../Spots/userSlice";
 import { useSelector } from "react-redux";
-import { Card, Col, Container, Row } from "react-bootstrap";
 
 //Esto lo importo para poder sacar el id con el token
 
@@ -53,7 +53,7 @@ const SavedSpots = () => {
                     <Card.Title>{savedSpots.Spot.spotname}</Card.Title>
                     <Card.Text>{savedSpots.Spot.city}</Card.Text>
                     <Card.Text></Card.Text>
-                    <button onClick={() => deleteSpot(savedSpots.id_userspot)}>
+                    <button className="buttonDesignRegister" onClick={() => deleteSpot(savedSpots.id_userspot)}>
                       Delete
                     </button>
                   </Card.Body>
