@@ -40,13 +40,14 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 
 La primera vista de la aplicación conforme accedemos a ella es la vista de REGISTER. Aquí encontramos el formulario para dar de alta un nuevo usuario en la base de datos. Los campos para crear el usuario son obligatorios ('user name', 'name', 'adress', 'city', 'email', 'password', 'password2'. Cada input nos indicará en caso de error si los campos introducidos son válidos o no lo son. 
 
-Desde el 'header' tenemos acceso a las páginas 'Spots', 'About', y 'Login'  para dar acceso a los usuarios ya registrados. 
+Sin estar registrados únicamente tenemos acceso a las páginas 'Register', 'About', y 'Login'  para dar acceso a los usuarios ya registrados. 
+
 
 ![home-register](https://user-images.githubusercontent.com/113507322/212437266-e13e9834-0d77-45b6-bd1c-0c2e0e5e68c2.png)
 
 **-->LOGIN**
 
-El login nos da acceso a la página como usuarios ya registrados. Para logearnos necesitamos introducir el 'email' y 'password'.
+El login nos da acceso a la página como usuarios ya registrados. Para logearnos necesitamos introducir el 'email' y 'password'. Si ya estamos registrados podemos pulsar sobre el enlace 'ir a registro'.
 
 ![login](https://user-images.githubusercontent.com/113507322/212439311-8009d9db-7cc9-4df1-9c84-d7636349f63f.png)
 
@@ -59,15 +60,17 @@ La vista está compuesta por una serie de tarjetas con la foto de la playa, el n
 **-->SPOTS INFO**
 
 Dentro de cada Spot tendremos la información específica de cada una de las localizaciones. En ella encontramos El título del spot/playa. Luego la posición 'top rated', evaluada de 1 a 5 estrellas. Por último, la presencia de socorristas, el tipo de playa y sus dimensiones en km. 
+En cada una de las playas encontramos la opción de 'Save spot', para guardar las ubicaciones que más nos gusten. 
 
 ![spots-info](https://user-images.githubusercontent.com/113507322/212490974-9e2fe0b4-72ec-4647-9aa2-d83bf81cff91.png)
 
 **-->PROFILE**
-En esta pantalla tenemos acceso a nuestros datos de usuario y a cambiar nuestro 'username' y la contraseña. 
+En esta pantalla tenemos acceso a nuestros datos de usuario y a cambiar nuestro 'username' y la contraseña. En esta vista aparecen los spots que tenemos guardados entre nuestros favoritos. Desde aquí, podremos eliminarlos. 
 
 
-![profile](https://user-images.githubusercontent.com/113507322/212570320-d4e5ccca-aec6-4704-828f-ccb72d2abd88.png)
+![profile1](https://user-images.githubusercontent.com/113507322/214158951-09d1fb92-9b46-4cc9-94df-11729c075be8.png)
 
+![profile2](https://user-images.githubusercontent.com/113507322/214158983-118c1f08-87d4-4168-85d2-6f27e0413c0f.png)
 
 
 **-->ABOUT**
