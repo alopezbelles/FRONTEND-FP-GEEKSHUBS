@@ -4,31 +4,54 @@ import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
 // import { savesData } from "../../Containers/Spots/spotsSlice";
-// import { getMySpots } from "../../services/ApiCalls"; 
-// import axios from "axios";
 
 import { errorCheck } from "../../services/usefull";
 import { editUser } from "../../services/ApiCalls";
+import { getMyUserData } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
-
+import { useDispatch } from "react-redux";
 import Image from "react-bootstrap/Image";
 import logoWaves from "../../aessets/logo_waves.png";
 import { Col, Container, Row } from "react-bootstrap";
 import SavedSpots from "../Spots/SavedSpots";
+import { login } from "../Spots/userSlice";
 
 const Profile = () => {
-  // const mySpots = useSelector(savesData);
-  // const mySpots = useState([]);
 
-  // const nameSpot = mySpots
-  // console.log(nameSpot)
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   let { decodedToken } = useJwt(token);
   // const id = decodedToken.id;
 
   // const [userspot, setUserspot] = useState([])
+
+  // const dataUser = {
+  //   id: decodedToken.id,
+  //   name: decodedToken.name,
+  //   username: decodedToken.username,
+  //   password: decodedToken.password,
+  // }
+
+
+
+
+
+// console.log(decodedToken)
+// console.log(decodedToken.id)
+  const userData = () =>
+    { setUser((prevState) => ({
+      ...prevState,
+      username: decodedToken?.username,
+    }));
+    getMyUserData(token)
+    .then (res => {dispatch(
+      login({ credentials: res })
+    );})
+    
+  }
+
+
 
   const [user, setUser] = useState({
     username: "",
@@ -46,11 +69,8 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    setUser((prevState) => ({
-      ...prevState,
-      username: decodedToken?.username,
-    }));
-  }, [decodedToken]);
+    userData()
+  }, []);
 
   // const validateBody = (body) => {
   //   if (body.username !== "" && body.password !== "" && body.password2 !== "") {
@@ -115,7 +135,7 @@ const Profile = () => {
               
             </Col>
             <Col className="col2Profile">
-            <form onSubmit={submitHandler} >
+            <div onSubmit={submitHandler} >
               <div className="inputsBoxProfile d-flex flex-column align-items-center justify-content-center ">
                 <div className="incompleteError">
                   {userError.incompleteerror}
@@ -170,10 +190,10 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              </form>
+              </div>
             </Col>
           </Row>
-            <form>
+            <div>
           {/* AQUÍ TENDRÉ QUE MOSTRAR MIS ALQUILERES */}
           <Row>
             <h2 className="yourDataText">These are my spots:</h2>
@@ -182,7 +202,7 @@ const Profile = () => {
            
           
           </Row>
-          </form>
+          </div>
         </Container>
       
     );

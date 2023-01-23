@@ -7,37 +7,38 @@ import { getMySpots } from "../../services/ApiCalls";
 import { deleteMySpot } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
 
-// import { userData } from "../Spots/userSlice";
-// import { useSelector } from "react-redux";
+import { userData } from "../Spots/userSlice";
+import { useSelector } from "react-redux";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 //Esto lo importo para poder sacar el id con el token
 
 
 const SavedSpots = () => {
+  // const navigate = useNavigate();
   //Esto lo uso para poder sacar la id del usuario con el token
   const token = localStorage.getItem("jwt");
-  let { decodedToken } = useJwt(token);
+  // let { decodedToken } = useJwt(token);
   // console.log(token)
+  // console.log(decodedToken)
   // const idUser = decodedToken.id
   // console.log(idUser)
-  const navigate = useNavigate();
 
 
   const [savedSpots, setSavedSpots] = useState([]);
   const [error, setError] = useState("");
 
-  // const userCredentials = useSelector(userData);
+  const credentialsUser = useSelector(userData);
 
   const deleteSpot = (id) => {
     deleteMySpot(id)
-    .then((res) => console.log(res))
-    // .then(navigate("/profile"));
+    .then((res) => spots())
+    
   }
 
 
   const spots = () => {
-    getMySpots(21)
+    getMySpots(credentialsUser.credentials.id)
       .then((res) => {
         console.log(res);
         setSavedSpots(res);

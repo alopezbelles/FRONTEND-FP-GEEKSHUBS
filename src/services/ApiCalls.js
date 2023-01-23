@@ -37,9 +37,6 @@ export const allSpots = async () => {
     }
   };
 
-
- 
-
   export const getMySpots = async (id) => {
     try {
       let res = await axios.get(`${URL}/spots/myspots/${id}`);
@@ -48,7 +45,32 @@ export const allSpots = async () => {
     }
   };
   
+  export const getMyUserData = async (token) => {
 
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    try {
+      let res = await axios.get(`${URL}/users`, config);
+      return res.data;
+    } catch (error) {
+    }
+  };
+
+  // const saveSpot = async (body, token) => {
+    
+   
+  //   try {
+  //     await axios.post(`${URL}/spots/savespot`, bodyParameters, config);
+  //     navigate("/spots");
+  //   } catch (error) {}
+  // };
+  
+
+ 
+
+  
 
   //PETICIONES CON POST
 

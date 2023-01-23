@@ -27,6 +27,7 @@ const SpotInfo = () => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
+    
     const bodyParameters = {
       SpotIdSpot: body.id_spot,
       UserIdUser: decodedToken.id,
